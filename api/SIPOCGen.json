@@ -1,0 +1,31 @@
+{
+    "sipocs":[
+{ "id": 1,
+    "name": "make sandwich",
+    "supplierId": 1,
+    "inputs": "bread",
+    "process": "make cheese sandwich",
+    "outputs": "sandwich with 2 slices of bread with 1 thick slice of cheese",
+    "customer": "lunch eater",
+    "timeSaved": "12:10",
+    "userId": 1
+}
+],
+"users":[
+    {
+        "id": 1,
+        "userName": "Bob"
+
+    }
+],
+"suppliers":[
+    {   "id": 1,
+        "name": "Kroger",
+        "address": "5th Avenue",
+        "phone": "304-544-5698",
+        "active": true,
+        "userId":1
+
+    }
+]
+}
