@@ -1,31 +1,50 @@
 {
-    "sipocs":[
-{ "id": 1,
-    "name": "make sandwich",
-    "supplierId": 1,
-    "inputs": "bread",
-    "process": "make cheese sandwich",
-    "outputs": "sandwich with 2 slices of bread with 1 thick slice of cheese",
-    "customer": "lunch eater",
-    "timeSaved": "12:10",
-    "userId": 1
-}
-],
-"users":[
+  "sipocs": [
     {
-        "id": 1,
-        "userName": "Bob"
-
+      "id": 1,
+      "name": "make cheese sandwich",
+      "supplierId": 1,
+      "inputs": "1. bread, 2. cheese",
+      "process": "assemble cheese sandwich",
+      "outputs": "sandwich with 2 slices of bread with 1 thick slice of cheese between them",
+      "customer": "consumer",
+      "timeSaved": "12:10",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "make ham sandwich",
+      "supplierId": 1,
+      "inputs": "1. bread 2. ham",
+      "process": "make cheese sandwich",
+      "outputs": "sandwich with 2 slices of bread with 1 thick slice of ham between",
+      "customer": "consumer",
+      "timeSaved": "9:00",
+      "userId": 1
     }
-],
-"suppliers":[
-    {   "id": 1,
-        "name": "Kroger",
-        "address": "5th Avenue",
-        "phone": "304-544-5698",
-        "active": true,
-        "userId":1
-
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "Bob"
     }
-]
+  ],
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "Kroger",
+      "address": "5th Avenue",
+      "phone": "304-544-5698",
+      "active": true,
+      "userId": 1
+    },
+    {
+      "name": "d",
+      "address": "efwsf",
+      "phone": "efsf",
+      "userId": null,
+      "loadingStatus": true,
+      "id": 2
+    }
+  ]
 }
