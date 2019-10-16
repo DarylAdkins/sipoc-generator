@@ -26,7 +26,7 @@ class SipocList extends Component {
     }
 
     render() {
-    
+
         return (
             <>
                 <section className="section-content">
@@ -37,11 +37,16 @@ class SipocList extends Component {
                 <div className="container-cards">
 
                     {this.state.sipocs.map(sipoc =>
-                        <SipocCard
-                            key={sipoc.id}
-                            sipoc={sipoc}
-                        />
-                    )}
+                         !sipoc.archived ? (
+                            <SipocCard
+                              deleteSipocProp={this.deleteSipoc}
+                              key={sipoc.id}
+                              sipoc={sipoc}
+                            />
+                          ) : (
+                            null
+                          )
+                        )}
                 </div>
             </>
         )

@@ -19,9 +19,9 @@ class NavBar extends Component {
 
             <nav>
                 <ul className="container">
-                    <li><Link className="nav-link" to="/home">Home</Link></li>
-                    <li><Link className="nav-link" to="/sipoc">SIPOCs
-                    </Link></li>
+                    <Link className="nav-link" to="/home"> Home </Link>
+                    <Link className="nav-link" to="/sipoc"> SIPOCs 
+                    </Link>
                 </ul>
             </nav>
             </header>

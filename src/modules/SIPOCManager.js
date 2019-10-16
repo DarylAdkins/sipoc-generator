@@ -18,5 +18,25 @@ export default {
             },
             body: JSON.stringify(newSipoc)
         }).then(data => data.json())
-    }
+    },
+
+    softDelete(id) {
+        return fetch(`${remoteURL}/sipocs/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({archived: true})
+        })
+        .then(result => result.json())
+      },
+      update(editedSipoc) {
+        return fetch(`${remoteURL}/sipocs/${editedSipoc.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedSipoc)
+        }).then(data => data.json());
+    },
 }

@@ -6,6 +6,7 @@ import SipocList from "./sipocgen/SipocList"
 import SipocForm from "./sipocgen/SipocForm"
 import SupplierForm from "./suppliers/SupplierForm"
 import SipocDetail from "./sipocgen/SipocDetail"
+import SipocEditForm from "./sipocgen/SipocEditForm"
 
 
 // import Auth0Client from "./auth/Auth";
@@ -31,13 +32,18 @@ class ApplicationViews extends Component {
 
                 <Route exact path="/sipoc/:sipocId(\d+)" render={(props) => {
                     // Pass the SipocId to the SipocDetail Component
-                    return  <SipocDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />
+                    return <SipocDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />
                 }} />
-
 
                 <Route exact path="/sipoc/new" render={(props) => {
                     return <SipocForm {...props} />
                 }} />
+
+                <Route
+                    path="/sipoc/:sipocId(\d+)/edit" render={props => {
+                        return <SipocEditForm {...props} />
+                    }}
+                />
 
 
 

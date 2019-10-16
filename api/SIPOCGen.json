@@ -9,18 +9,38 @@
       "outputs": "sandwich with 2 slices of bread with 1 thick slice of cheese between them",
       "customer": "consumer",
       "timeSaved": "12:10",
-      "userId": 1
+      "userId": 1,
+      "archived": true
     },
     {
       "id": 2,
-      "name": "make ham sandwich",
+      "name": "make turkey sandwich",
       "supplierId": 1,
-      "inputs": "1. bread 2. ham",
+      "inputs": "1. bread 2. turkey",
       "process": "make cheese sandwich",
-      "outputs": "sandwich with 2 slices of bread with 1 thick slice of ham between",
-      "customer": "consumer",
-      "timeSaved": "9:00",
-      "userId": 1
+      "outputs": "sandwich with 2 slices of bread with 1 thick slice of turkey between",
+      "customer": "consumer"
+    },
+    {
+      "id": 3,
+      "name": "Cooking Eggs in Boiling Water",
+      "supplierId": "",
+      "inputs": "1. Eggs, 2. Water",
+      "process": "1. Boil Water, 2. Place eggs in boiling water for 10 minutes",
+      "outputs": "Hard Boiled Eggs with cooked yolks",
+      "customer": "Breakfast Eaters"
+    },
+    {
+      "name": "Make PB&J",
+      "supplierId": "",
+      "inputs": "1. Peanut Butter, 2. Jelly, 3.Bread",
+      "process": "Spread Peanut Butter and Jelly on individual slices of bread, place bread slices together with pb&j on the inside",
+      "outputs": "PB&J Sandwich",
+      "customer": "Lunch Eaters",
+      "timeSaved": 1571238872207,
+      "userId": null,
+      "loadingStatus": false,
+      "id": 4
     }
   ],
   "users": [
@@ -36,7 +56,8 @@
       "address": "5th Avenue",
       "phone": "304-544-5698",
       "active": true,
-      "userId": 1
+      "userId": 1,
+      "archived": false
     },
     {
       "name": "d",
@@ -44,7 +65,8 @@
       "phone": "efsf",
       "userId": null,
       "loadingStatus": true,
-      "id": 2
+      "id": 2,
+      "archived": false
     }
   ]
 }

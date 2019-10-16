@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SIPOCManager from '../../modules/SIPOCManager';
+import { Link } from "react-router-dom";
 
 
 class SipocDetail extends Component {
@@ -17,12 +18,12 @@ class SipocDetail extends Component {
         loadingStatus: true,
     }
 
-    handleDelete = () => {
-        //invoke the delete function in SIPOCManger and re-direct to the Sipoc list.
-        this.setState({ loadingStatus: true })
-        SIPOCManager.delete(this.props.sipocId)
-            .then(() => this.props.history.push("/sipoc"))
-    }
+    deleteSipoc = id => {
+
+        SIPOCManager.softDelete(this.state.id)
+            .then(() => { this.props.history.push("/sipoc") });
+    };
+
 
     isValid = () => this.state.name !== undefined
 
@@ -32,6 +33,7 @@ class SipocDetail extends Component {
         SIPOCManager.getOne(this.props.sipocId)
             .then((sipoc) => {
                 this.setState({
+                    id: sipoc.id,
                     name: sipoc.name,
                     supplierId: sipoc.supplierId,
                     inputs: sipoc.inputs,
@@ -45,13 +47,14 @@ class SipocDetail extends Component {
             });
     }
 
-    render() {console.log(this.state.name)
+    render() {
+        console.log(this.state.name)
         return (
             this.isValid() ?
-            <div className="card">
-                <div className="card-content">
+                <div className="card">
+                    <div className="card-content">
 
-                <h3>SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+                        <h3>SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
                         <p>Supplier:</p> <p>{this.state.supplierId}</p>
                         <p>Input:</p> <p>{this.state.inputs}</p>
                         <p>Process:</p> <p>{this.state.process}</p>
@@ -59,11 +62,12 @@ class SipocDetail extends Component {
                         <p>Customer:</p> <p>{this.state.customer}</p>
 
 
-                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Delete SIPOC</button>
+                        <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSipoc}>Delete SIPOC</button>
+                        <Link to={`/sipoc/${this.state.id}/edit`}><button>Edit</button></Link>
+                    </div>
                 </div>
-            </div>
-            :
-            <p>Item does not exist</p>
+                :
+                <p>Item does not exist</p>
         );
     }
 }
