@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "make cheese sandwich",
-      "supplierId": 1,
+      "supplierId": 3,
       "inputs": "1. bread, 2. cheese",
       "process": "assemble cheese sandwich",
       "outputs": "sandwich with 2 slices of bread with 1 thick slice of cheese between them",
@@ -15,7 +15,7 @@
     {
       "id": 2,
       "name": "make turkey sandwich",
-      "supplierId": 1,
+      "supplierId": 3,
       "inputs": "1. bread 2. turkey",
       "process": "make cheese sandwich",
       "outputs": "sandwich with 2 slices of bread with 1 thick slice of turkey between",
@@ -24,7 +24,7 @@
     {
       "id": 3,
       "name": "Cooking Eggs in Boiling Water",
-      "supplierId": "",
+      "supplierId": 1,
       "inputs": "1. Eggs, 2. Water",
       "process": "1. Boil Water, 2. Place eggs in boiling water for 10 minutes",
       "outputs": "Hard Boiled Eggs with cooked yolks",
@@ -32,7 +32,7 @@
     },
     {
       "name": "Make PB&J",
-      "supplierId": "",
+      "supplierId": 4,
       "inputs": "1. Peanut Butter, 2. Jelly, 3.Bread",
       "process": "Spread Peanut Butter and Jelly on individual slices of bread, place bread slices together with pb&j on the inside",
       "outputs": "PB&J Sandwich",
@@ -41,6 +41,63 @@
       "userId": null,
       "loadingStatus": false,
       "id": 4
+    },
+    {
+      "name": "test",
+      "supplierId": 1,
+      "inputs": "test",
+      "process": "test",
+      "outputs": "test",
+      "customer": "test",
+      "timeSaved": 1571253169344,
+      "userId": "1",
+      "loadingStatus": false,
+      "id": 5
+    },
+    {
+      "name": "d",
+      "supplierId": 3,
+      "inputs": "edad",
+      "process": "eda",
+      "outputs": "e",
+      "customer": "edwad",
+      "timeSaved": 1571253398030,
+      "userId": "1",
+      "loadingStatus": false,
+      "id": 6,
+      "archived": true
+    },
+    {
+      "name": "wefwef",
+      "supplierId": 3,
+      "inputs": "refv",
+      "process": "rev",
+      "outputs": "erfv",
+      "customer": "rf",
+      "timeSaved": 1571253896025,
+      "userId": 1,
+      "loadingStatus": false,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "wefewf!!!!!!!!!!!",
+      "supplierId": 3,
+      "inputs": "wedwd",
+      "process": "wefwedf",
+      "outputs": "wefef",
+      "customer": "sses"
+    },
+    {
+      "name": "vvv",
+      "inputs": "dcdc",
+      "process": "dcdc",
+      "outputs": "dcs",
+      "customer": "sdvsdv",
+      "timeSaved": 1571254688564,
+      "userId": "1",
+      "loadingStatus": false,
+      "id": 9
     }
   ],
   "users": [
@@ -67,6 +124,22 @@
       "loadingStatus": true,
       "id": 2,
       "archived": false
+    },
+    {
+      "name": "Walmart",
+      "address": "Route 60 Huntington",
+      "phone": "304-785-4597",
+      "userId": "1",
+      "loadingStatus": true,
+      "id": 3
+    },
+    {
+      "name": "Bobs",
+      "address": "123 Street",
+      "phone": "6416841646",
+      "userId": "1",
+      "loadingStatus": true,
+      "id": 4
     }
   ]
 }

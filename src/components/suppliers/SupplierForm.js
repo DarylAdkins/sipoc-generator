@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SIPOCManager from '../../modules/SIPOCManager';
 import SupplierManager from '../../modules/SupplierManager'
 
 

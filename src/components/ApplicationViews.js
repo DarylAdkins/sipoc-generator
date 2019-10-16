@@ -7,10 +7,8 @@ import SipocForm from "./sipocgen/SipocForm"
 import SupplierForm from "./suppliers/SupplierForm"
 import SipocDetail from "./sipocgen/SipocDetail"
 import SipocEditForm from "./sipocgen/SipocEditForm"
-
-
-// import Auth0Client from "./auth/Auth";
-// import Callback from "./auth/Callback"
+import Auth0Client from "./auth/Auth";
+import Callback from "./auth/Callback"
 
 
 class ApplicationViews extends Component {
@@ -22,35 +20,86 @@ class ApplicationViews extends Component {
             <React.Fragment>
 
 
-                <Route exact path="/home" render={(props) => {
-                    return <Home {...props} />
-                }} />
 
-                <Route exact path="/sipoc" render={(props) => {
-                    return <SipocList {...props} />
-                }} />
-
-                <Route exact path="/sipoc/:sipocId(\d+)" render={(props) => {
-                    // Pass the SipocId to the SipocDetail Component
-                    return <SipocDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />
-                }} />
-
-                <Route exact path="/sipoc/new" render={(props) => {
-                    return <SipocForm {...props} />
-                }} />
 
                 <Route
-                    path="/sipoc/:sipocId(\d+)/edit" render={props => {
-                        return <SipocEditForm {...props} />
+                    exact
+                    path="/home"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <Home {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
                     }}
                 />
 
+                <Route
+                    exact
+                    path="/sipoc"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocList {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
 
+                <Route
+                    exact
+                    path="/sipoc/:sipocId(\d+)"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
 
+                <Route
+                    exact
+                    path="/sipoc/new"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocForm {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
 
-                <Route exact path="/supplier/new" render={(props) => {
-                    return <SupplierForm {...props} />
-                }} />
+                <Route
+                    exact
+                    path="/sipoc/:sipocId(\d+)/edit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocEditForm {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/supplier/new"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierForm {...props}  />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+                <Route exact path="/callback" component={Callback} />
 
 
             </React.Fragment>

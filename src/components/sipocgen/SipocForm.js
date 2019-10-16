@@ -34,7 +34,7 @@ class SipocForm extends Component {
             this.setState({ loadingStatus: true });
             const newSipoc = {
                 name: this.state.name,
-                supplierId: this.state.supplierId,
+                supplier: +this.state.supplierId,
                 inputs: this.state.inputs,
                 process: this.state.process,
                 outputs: this.state.outputs,

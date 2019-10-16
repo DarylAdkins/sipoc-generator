@@ -48,7 +48,7 @@ class SipocDetail extends Component {
     }
 
     render() {
-        console.log(this.state.name)
+        console.log(this.state.supplierId)
         return (
             this.isValid() ?
                 <div className="card">
