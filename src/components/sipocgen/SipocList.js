@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import SipocCard from './SipocCard'
 import SIPOCManager from '../../modules/SIPOCManager'
 import { Link } from "react-router-dom";
+import "./SipocList.css"
 
 class SipocList extends Component {
     //define what this component needs to render
@@ -29,6 +30,7 @@ class SipocList extends Component {
 
         return (
             <>
+            <body>
                 <section className="section-content">
                     <div>
                         <Link to="/sipoc/new"><button>Create New SIPOCs</button></Link>
@@ -48,6 +50,7 @@ class SipocList extends Component {
                           )
                         )}
                 </div>
+                </body>
             </>
         )
     }

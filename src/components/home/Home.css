@@ -1,0 +1,20 @@
+#welcome {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(31, 90, 56);
+}
+
+h1 {
+    color: palegoldenrod;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    color: palegoldenrod;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#list {
+    color: rgb(179, 175, 131);
+    font-family: Arial, Helvetica, sans-serif;
+}

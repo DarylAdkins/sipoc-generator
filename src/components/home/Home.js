@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import SIPOCManager from '../../modules/SIPOCManager'
 // import SipocList from '../sipocgen/SipocList'
 import { Link } from "react-router-dom";
+import "./Home.css"
 
 class Home extends Component {
 
@@ -9,32 +10,15 @@ class Home extends Component {
 
         return (
 
-            <form >
+            <form id="welcome">
                 <div>
-                <h1>Welcome to SIPOC Generator</h1>
+                <h1>Welcome to the SIPOC Generator</h1>
 
-                <h2>Getting Started:</h2>
-                <h3>Users can create, view, edit, and archive SIPOCs.</h3>
-                <h3>Users are limited to viewing, editing and archiving only the SIPOCS that they created.</h3>
+                <li id="list">Use the Navigation Links to move throughout the application.</li>
+                <li id="list">Users can create, view, edit, and archive SIPOCs.</li>
+                <li id="list">Users are limited to viewing, editing and archiving only the SIPOCS that they created.</li>
 
-                {/* <div>
-                    <Link to="/sipoc"><button>View Previous SIPOCs</button></Link>
                 </div>
-
-                <div>
-                    <Link to="/sipoc/new"><button>Create New SIPOC</button></Link>
-                </div>
-
-                <div>
-                    <Link to="/supplier/new"><button>Create New Supplier</button></Link>
-                </div> */}
-                </div>
-
-
-
-
-
-
             </form>
         )
     }
