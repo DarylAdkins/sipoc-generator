@@ -19,7 +19,7 @@ class NavBar extends Component {
         </h1>
         <nav>
           <ul className="container">
-            <li><Link className="nav-link" to="/">Home</Link></li>
+            <li><Link className="nav-link" to="/home">Home</Link></li>
             {!auth0Client.isAuthenticated() ? (
               <button className="btn btn-success" onClick={auth0Client.signIn}>Sign In</button>
         ) : (

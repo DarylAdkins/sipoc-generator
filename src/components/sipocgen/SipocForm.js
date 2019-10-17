@@ -29,19 +29,21 @@ class SipocForm extends Component {
     constructNewSipoc = evt => {
         evt.preventDefault();
         if (this.state.name === "" || this.state.process === "") {
-            window.alert("Please input name and process");
+            window.alert("Please input name, and process");
+        } else if (this.state.supplierId === "")
+        {window.alert("Please select a supplier from the dropdown");
         } else {
             this.setState({ loadingStatus: true });
             const newSipoc = {
                 name: this.state.name,
-                supplier: +this.state.supplierId,
+                supplierId: +this.state.supplierId,
                 inputs: this.state.inputs,
                 process: this.state.process,
                 outputs: this.state.outputs,
                 customer: this.state.customer,
                 timeSaved: Date.now(),
-                userId: sessionStorage.getItem("credentials"),
-                loadingStatus: false,
+                userId: +sessionStorage.getItem("credentials"),
+                archive: false
 
             };
 
@@ -94,7 +96,7 @@ class SipocForm extends Component {
                                 </option>
                             )}
                         </select>
-
+                        <label htmlFor="supplierId">Select Supplier</label>
                         <input
                                 type="text"
                                 required

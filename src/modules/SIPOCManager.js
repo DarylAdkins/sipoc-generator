@@ -3,11 +3,11 @@ const remoteURL = "http://localhost:5002"
 export default {
 
     getAll() {
-        return fetch(`${remoteURL}/sipocs`).then(result => result.json())
+        return fetch(`${remoteURL}/sipocs?_expand=supplier&userId=${sessionStorage.getItem("credentials")}`).then(result => result.json())
     },
 
     getOne(id) {
-        return fetch(`${remoteURL}/sipocs/${id}`).then(result => result.json())
+        return fetch(`${remoteURL}/sipocs/${id}?_expand=supplier`).then(result => result.json())
     },
 
     post(newSipoc) {

@@ -25,21 +25,32 @@ class SipocEditForm extends Component {
     }
 
     updateExistingSipoc = evt => {
+        debugger;
         evt.preventDefault()
+        if (this.state.supplierId === "0")
+        {window.alert("Please select a supplier from the dropdown");
+        } else {
+        debugger
         this.setState({ loadingStatus: true });
+        debugger
         const editedSipoc = {
             id: this.props.match.params.sipocId,
             name: this.state.name,
-            supplierId: this.state.supplierId,
+            supplierId: +this.state.supplierId,
             inputs: this.state.inputs,
             process: this.state.process,
             outputs: this.state.outputs,
             customer: this.state.customer,
+            timeSaved: Date.now(),
+            userId: +sessionStorage.getItem("credentials"),
+            archive: false
 
         };
 
+        console.log("this is edited sipoc", editedSipoc)
         SIPOCManager.update(editedSipoc)
             .then(() => this.props.history.push("/sipoc"))
+    }
     }
 
     componentDidMount() {
@@ -66,6 +77,7 @@ class SipocEditForm extends Component {
     }
 
     render() {
+        debugger
         return (
             <>
                 <form>

@@ -42,6 +42,7 @@ class SipocDetail extends Component {
                     customer: sipoc.customer,
                     timeSaved: Date.now(),
                     userId: sessionStorage.getItem("credentials"),
+                    supplier: sipoc.supplier.name,
                     loadingStatus: false,
                 });
             });
@@ -55,7 +56,7 @@ class SipocDetail extends Component {
                     <div className="card-content">
 
                         <h3>SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-                        <p>Supplier:</p> <p>{this.state.supplierId}</p>
+                        <p>Supplier:</p> <p>{this.state.supplier}</p>
                         <p>Input:</p> <p>{this.state.inputs}</p>
                         <p>Process:</p> <p>{this.state.process}</p>
                         <p>Output:</p> <p>{this.state.outputs}</p>
