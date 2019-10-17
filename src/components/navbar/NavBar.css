@@ -1,0 +1,41 @@
+#signinbutton {
+    background-color:lightblue;
+    display: flex;
+    justify-content: center;
+}
+
+.site-title {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#signinbuttonposition {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(41, 63, 129);
+}
+
+.nav-link {
+    font-family: Arial, Helvetica, sans-serif;
+    color: palegoldenrod;
+}
+
+#user {
+    color: palegoldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#userdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
