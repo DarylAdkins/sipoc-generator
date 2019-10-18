@@ -9,6 +9,7 @@ import SipocDetail from "./sipocgen/SipocDetail"
 import SipocEditForm from "./sipocgen/SipocEditForm"
 import Auth0Client from "./auth/Auth";
 import Callback from "./auth/Callback"
+import SipocSearch from "./search/SipocSearch"
 
 
 class ApplicationViews extends Component {
@@ -89,10 +90,41 @@ class ApplicationViews extends Component {
 
                 <Route
                     exact
+                    path="/sipoc/search"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearch {...props}
+                            // sipocId={parseInt(props.match.params.sipocId)}
+                            />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/sipoc/search/list"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearch {...props}
+                            // sipocId={parseInt(props.match.params.sipocId)}
+                            />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
                     path="/supplier/new"
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
-                            return <SupplierForm {...props}  />;
+                            return <SupplierForm {...props} />;
                         } else {
                             Auth0Client.signIn();
                             return null;

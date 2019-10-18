@@ -39,4 +39,10 @@ export default {
             body: JSON.stringify(editedSipoc)
         }).then(data => data.json());
     },
+    searchAll(search) {
+        return fetch(`${remoteURL}/sipocs?q=${search}&userId=${sessionStorage.getItem("credentials")}`).then(result => result.json())
+    },
 }
+
+
+

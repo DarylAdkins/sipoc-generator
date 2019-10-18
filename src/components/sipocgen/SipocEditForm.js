@@ -25,14 +25,14 @@ class SipocEditForm extends Component {
     }
 
     updateExistingSipoc = evt => {
-        debugger;
+
         evt.preventDefault()
         if (this.state.supplierId === "0")
         {window.alert("Please select a supplier from the dropdown");
         } else {
-        debugger
+
         this.setState({ loadingStatus: true });
-        debugger
+
         const editedSipoc = {
             id: this.props.match.params.sipocId,
             name: this.state.name,
@@ -77,7 +77,7 @@ class SipocEditForm extends Component {
     }
 
     render() {
-        debugger
+      
         return (
             <>
                 <form>

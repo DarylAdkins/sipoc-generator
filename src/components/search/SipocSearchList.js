@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import SipocCard from './SipocCard'
 import SIPOCManager from '../../modules/SIPOCManager'
 import { Link } from "react-router-dom";
-import "./SipocList.css"
+// import "./SipocList.css"
 
 class SipocList extends Component {
     //define what this component needs to render
