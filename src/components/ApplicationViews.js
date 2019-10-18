@@ -10,6 +10,9 @@ import SipocEditForm from "./sipocgen/SipocEditForm"
 import Auth0Client from "./auth/Auth";
 import Callback from "./auth/Callback"
 import SipocSearch from "./search/SipocSearch"
+import SipocSearchDetail from "./search/SipocSearchDetail"
+import SipocSearchEditForm from "./search/SipocSearchEditForm"
+
 
 
 class ApplicationViews extends Component {
@@ -64,6 +67,20 @@ class ApplicationViews extends Component {
 
                 <Route
                     exact
+                    path="/sipoc/search/details/:sipocId(\d+)"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearchDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
                     path="/sipoc/new"
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
@@ -90,7 +107,7 @@ class ApplicationViews extends Component {
 
                 <Route
                     exact
-                    path="/sipoc/search"
+                    path="/sipoc/searchedit"
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
                             return <SipocSearch {...props}

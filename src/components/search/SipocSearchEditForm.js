@@ -24,7 +24,7 @@ class SipocEditForm extends Component {
         this.setState(stateToChange)
     }
 
-    updateExistingSipoc = evt => {
+    updateExistingSearchSipoc = evt => {
 
         evt.preventDefault()
         if (this.state.supplierId === "0")
@@ -47,7 +47,7 @@ class SipocEditForm extends Component {
 
         };
 
-      
+
         SIPOCManager.update(editedSipoc)
             .then(() => this.props.history.push("/sipoc"))
     }
@@ -154,7 +154,7 @@ class SipocEditForm extends Component {
                             <button
                                 type="button"
                                 // disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingSipoc}
+                                onClick={this.updateExistingSearchSipoc}
                             >Save Changes</button>
                         </div>
                     </fieldset>

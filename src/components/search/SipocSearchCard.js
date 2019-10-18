@@ -11,10 +11,10 @@ class SipocSearchCard extends Component {
                 <div className="card">
                     <div className="card-content">
 
-                        <h3>SIPOC Name: <span style={{ color: 'darkslategrey', fontFamily: 'ariel' }}>{this.props.sipoc.name}</span></h3>
+                        <h3>SIPOC Name: <span style={{ color: 'darkslategrey', fontFamily: 'ariel' }}>{this.props.returnedSipoc.name}</span></h3>
 
 
-                        <Link to={`/sipoc/${this.props.sipoc.id}?_expand=supplier`}><button>Details</button></Link>
+                        <Link to={`/sipoc/search/details/${this.props.returnedSipoc.id}?_expand=supplier`}><button>Details</button></Link>
 
 
 
