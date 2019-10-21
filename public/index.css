@@ -1,0 +1,8 @@
+body {
+   background-image: url("whiteboardedit.jpg");
+   background-position: center; /*Center the image */
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-position-y: 5px;
+   background-size: 100%;
+   /* background-size: 80%; Resize the background image to cover the entire container */
+}

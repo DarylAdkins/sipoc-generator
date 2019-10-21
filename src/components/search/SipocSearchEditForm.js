@@ -49,7 +49,7 @@ class SipocEditForm extends Component {
 
 
         SIPOCManager.update(editedSipoc)
-            .then(() => this.props.history.push("/sipoc"))
+            .then(() => this.props.history.push("/sipoc/search"))
     }
     }
 

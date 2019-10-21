@@ -67,7 +67,7 @@ class ApplicationViews extends Component {
 
                 <Route
                     exact
-                    path="/sipoc/search/details/:sipocId(\d+)"
+                    path="/sipoc/searchedit/details/:sipocId(\d+)"
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
                             return <SipocSearchDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />;
@@ -107,7 +107,21 @@ class ApplicationViews extends Component {
 
                 <Route
                     exact
-                    path="/sipoc/searchedit"
+                    path="/sipoc/:sipocId(\d+)/searchedit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearchEditForm {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
+                    path="/sipoc/search"
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
                             return <SipocSearch {...props}
@@ -122,7 +136,7 @@ class ApplicationViews extends Component {
 
                 <Route
                     exact
-                    path="/sipoc/search/list"
+                    path="/sipoc/searchedit"
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
                             return <SipocSearch {...props}

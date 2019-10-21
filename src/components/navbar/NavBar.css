@@ -1,13 +1,18 @@
 #signinbutton {
     background-color:lightblue;
+    color: rgb(148, 5, 148);
     display: flex;
     justify-content: center;
+    /* size: 30px; */
 }
 
 .site-title {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Mansalva', cursive;
     display: flex;
     justify-content: center;
+    font-size: 35px;
+    padding-top: 5px;
+    color: darkslategray;
 }
 
 #signinbuttonposition {
@@ -17,18 +22,26 @@
 
 .container {
     display: flex;
+    height: auto;
+    width: auto;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(41, 63, 129);
+    background-color: rgba(41, 63, 129, 0.459);
 }
 
 .nav-link {
-    font-family: Arial, Helvetica, sans-serif;
-    color: palegoldenrod;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Mansalva', cursive;
+    /* justify-content: center; */
+    font-size: 25px;
+    color: rgb(148, 5, 148);
 }
 
 #user {
-    color: palegoldenrod;
+    color: rgb(148, 5, 148);
+    font-size: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,3 +52,15 @@
     flex-direction: column;
     justify-content: center;
 }
+
+#signoutbutton {
+    height: 30px;
+    display: flex;
+    
+    justify-content: center;
+}
+
+/* h1 {
+    color: rgb(48, 46, 24);
+
+} */

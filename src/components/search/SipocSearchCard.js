@@ -14,7 +14,7 @@ class SipocSearchCard extends Component {
                         <h3>SIPOC Name: <span style={{ color: 'darkslategrey', fontFamily: 'ariel' }}>{this.props.returnedSipoc.name}</span></h3>
 
 
-                        <Link to={`/sipoc/search/details/${this.props.returnedSipoc.id}?_expand=supplier`}><button>Details</button></Link>
+                        <Link to={`/sipoc/searchedit/details/${this.props.returnedSipoc.id}?_expand=supplier`}><button>Details</button></Link>
 
 
 

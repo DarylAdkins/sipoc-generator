@@ -44,9 +44,10 @@
       "process": "ec",
       "outputs": "ewc",
       "customer": "wec",
-      "timeSaved": 1571420845243,
+      "timeSaved": 1571422882808,
       "userId": 2,
-      "archive": false
+      "archive": false,
+      "archived": true
     },
     {
       "id": 5,
@@ -56,7 +57,7 @@
       "process": "ad",
       "outputs": "bananas",
       "customer": "wd",
-      "timeSaved": 1571421403774,
+      "timeSaved": 1571426375199,
       "userId": 2,
       "archive": false
     },
@@ -80,7 +81,7 @@
       "process": "make apple sauce",
       "outputs": "apple sauce",
       "customer": "kids",
-      "timeSaved": 1571411927417,
+      "timeSaved": 1571424805592,
       "userId": 2,
       "archive": false
     },

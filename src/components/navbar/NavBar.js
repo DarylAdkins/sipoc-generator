@@ -14,9 +14,7 @@ class NavBar extends Component {
 
         return (
             <header>
-                <h1 className="site-title">SIPOC Generator<br />
-
-                </h1>
+                <h1 className="site-title">SIPOC Generator</h1>
                 <nav>
 
                     {!auth0Client.isAuthenticated() ? (
@@ -34,7 +32,7 @@ class NavBar extends Component {
                                             </div>
                                     </div>
 
-                                    <button
+                                    <button id="signoutbutton"
                                         className="btn btn-danger"
                                         onClick={this.signOut}
                                     >

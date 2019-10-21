@@ -37,6 +37,7 @@ class SipocSearch extends Component {
 
 
 
+
     render() {
 
         return (
@@ -50,7 +51,7 @@ class SipocSearch extends Component {
                                 onChange={this.handleFieldChange}
                                 //id must exactly match variable in state
                                 id="search"
-                                value={sessionStorage.getItem("keyword")}
+                                // value={sessionStorage.getItem("keyword")}
                                 placeholder="Search by Keyword"
                             />
                             <label htmlFor="search">SIPOC Search</label>

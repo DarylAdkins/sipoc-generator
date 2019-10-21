@@ -21,7 +21,7 @@ class SipocDetail extends Component {
     deleteSipoc = id => {
 
         SIPOCManager.softDelete(this.state.id)
-            .then(() => { this.props.history.push("/sipoc") });
+            .then(() => { this.props.history.push("/sipoc/searchedit") });
     };
 
 
@@ -64,7 +64,7 @@ class SipocDetail extends Component {
 
 
                         <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSipoc}>Delete SIPOC</button>
-                        <Link to={`/sipoc/${this.state.id}/edit`}><button>Edit</button></Link>
+                        <Link to={`/sipoc/${this.state.id}/searchedit`}><button>Edit</button></Link>
                     </div>
                 </div>
                 :
