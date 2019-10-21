@@ -27,17 +27,19 @@ class NavBar extends Component {
                                     <p><Link className="nav-link" to="/supplier/new">  Enter New Supplier  </Link></p>
 
                                     <div id="userdiv">
-                                        <div id="user">
+                                        <div id="user"> 
                                             {auth0Client.getProfile().name}
-                                            </div>
+                                        </div>
                                     </div>
 
-                                    <button id="signoutbutton"
+                                    <div id="signoutcontainer">
+                                        <button id="signoutbutton"
                                         className="btn btn-danger"
                                         onClick={this.signOut}
                                     >
                                         Sign Out
-              </button>
+                                     </button>
+                                    </div>
                                 </div>
 
 
