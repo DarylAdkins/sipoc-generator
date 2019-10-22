@@ -1,0 +1,55 @@
+.titleboxes {
+    display: flex;
+    border-style: solid;
+    width: 10vw;
+    height: fit-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 30px;
+};
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    size: 90pc;
+}
+
+.contentboxes {
+    display: flex;
+    border-style: solid;
+    width: 10vw;
+    height: max-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+
+}
+
+.column {
+    display: flex;
+    /* border-style: solid; */
+    border-color: gray;
+    flex-direction: column;
+    width: 15vw;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 25px;
+}
+
+.sipoc-name {
+    padding-left: 30px;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+}

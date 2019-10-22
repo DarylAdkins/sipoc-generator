@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import "./SipocCard.css"
 
 
 
@@ -11,13 +12,8 @@ class SipocCard extends Component {
                 <div className="card">
                     <div className="card-content">
 
-                        <h3 className="sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey', fontFamily: 'ariel' }}>{this.props.sipoc.name}</span></h3>
-
-
-                        <Link to={`/sipoc/${this.props.sipoc.id}?_expand=supplier`}><button>Details</button></Link>
-
-
-
+                        <p className="sipoc-name1">SIPOC Name: <span>{this.props.sipoc.name}</span></p>
+                        <Link to={`/sipoc/${this.props.sipoc.id}?_expand=supplier`}><button className="details-button">Details</button></Link>
                     </div>
                 </div>
 

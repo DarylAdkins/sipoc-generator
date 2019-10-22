@@ -216,6 +216,30 @@
       "userId": 0,
       "archive": false,
       "id": 18
+    },
+    {
+      "id": 19,
+      "name": "Chickens",
+      "supplierId": 7,
+      "inputs": "Tomatoes",
+      "process": "snack time",
+      "outputs": "happy hens",
+      "customer": "Solo",
+      "timeSaved": 1571701484640,
+      "userId": 5,
+      "archive": false
+    },
+    {
+      "name": "Test10",
+      "supplierId": 1,
+      "inputs": "test",
+      "process": "spam",
+      "outputs": "lettuce",
+      "customer": "chicken",
+      "timeSaved": 1571758030119,
+      "userId": 2,
+      "archive": false,
+      "id": 20
     }
   ],
   "users": [
@@ -238,6 +262,11 @@
       "aud": "auth0|5da87c11dbb8c00d79004727",
       "name": "sally",
       "id": 4
+    },
+    {
+      "aud": "auth0|5dae41f2b256c50e25993758",
+      "name": "abableach",
+      "id": 5
     }
   ],
   "suppliers": [
@@ -290,6 +319,14 @@
       "userId": "3",
       "loadingStatus": true,
       "id": 6
+    },
+    {
+      "name": "Tractor",
+      "address": "ohio",
+      "phone": "1234",
+      "userId": "5",
+      "loadingStatus": true,
+      "id": 7
     }
   ]
 }
