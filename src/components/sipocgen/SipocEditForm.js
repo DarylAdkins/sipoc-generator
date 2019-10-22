@@ -82,10 +82,10 @@ class SipocEditForm extends Component {
         return (
             <>
                 <form>
-                    <fieldset>
-                        <div className="formgrid">
 
-                            <div className="sipoc-name">
+                        <div className="edit-form-formgrid">
+
+                            <div className="edit-form-sipoc-name">
                                 <label htmlFor="name">SIPOC Title </label>
                                 <input
                                     type="text"
@@ -98,12 +98,12 @@ class SipocEditForm extends Component {
                                 />
                             </div>
 
-                            <div className="flex-container">
-                                <div className="column">
-                                    <div className="titleboxes">
+                            <div className="edit-form-flex-container">
+                                <div className="edit-form-column">
+                                    <div className="edit-form-titleboxes">
                                         <label htmlFor="supplierId">Select Supplier</label>
                                     </div>
-                                    <div className="contentboxes">
+                                    <div className="edit-form-contentboxes">
                                         <select
                                             className="form-control"
                                             id="supplierId"
@@ -121,26 +121,11 @@ class SipocEditForm extends Component {
 
                                 </div>
 
-
-                                {/* <select
-                                className="form-control"
-                                id="supplierId"
-
-                                onChange={this.handleFieldChange}
-                            >
-                                {this.state.suppliers.map(supplier =>
-                                    <option key={supplier.id}
-                                        value={supplier.id}>
-                                        {supplier.name}
-                                    </option>
-                                )}
-                            </select> */}
-
-                                <div className="column">
-                                    <div className="titleboxes">
+                                <div className="edit-form-column">
+                                    <div className="edit-form-titleboxes">
                                         <label htmlFor="Inputs">Inputs</label>
                                     </div>
-                                    <div className="contentboxes">
+                                    <div className="edit-form-contentboxes">
                                         <textarea
                                             type="text"
                                             required
@@ -152,12 +137,12 @@ class SipocEditForm extends Component {
                                     </div>
                                 </div>
 
-                                <div className="column">
-                                    <div className="titleboxes">
+                                <div className="edit-form-column">
+                                    <div className="edit-form-titleboxes">
                                         <label htmlFor="process">Process</label>
                                     </div>
 
-                                    <div className="contentboxes">
+                                    <div className="edit-form-contentboxes">
                                         <textarea
                                             type="textarea"
                                             required
@@ -169,11 +154,11 @@ class SipocEditForm extends Component {
                                     </div>
                                 </div>
 
-                                <div className="column">
-                                    <div className="titleboxes">
+                                <div className="edit-form-column">
+                                    <div className="edit-form-titleboxes">
                                         <label htmlFor="outputs">Outputs</label>
                                     </div>
-                                    <div className="contentboxes">
+                                    <div className="edit-form-contentboxes">
                                         <textarea
                                             type="text"
                                             required
@@ -186,11 +171,11 @@ class SipocEditForm extends Component {
                                 </div>
 
 
-                                <div className="column">
-                                    <div className="titleboxes">
+                                <div className="edit-form-column">
+                                    <div className="edit-form-titleboxes">
                                         <label htmlFor="customer">Customers</label>
                                     </div>
-                                    <div className="contentboxes">
+                                    <div className="edit-form-contentboxes">
                                         <textarea
                                             type="text"
                                             required
@@ -203,16 +188,16 @@ class SipocEditForm extends Component {
                                 </div>
 
 
-                                <div className="alignRight">
+                                <div className="edit-form-button-container">
                                     <button
                                         type="button"
-                                        // disabled={this.state.loadingStatus}
+                                        disabled={this.state.loadingStatus}
                                         onClick={this.updateExistingSipoc}
                                     >Save Changes</button>
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+                   
                 </form>
             </>
         );

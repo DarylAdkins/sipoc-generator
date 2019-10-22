@@ -14,3 +14,8 @@
     justify-content: center;
     padding: 4px;
 }
+
+.label-text {
+    font-family: 'Mansalva', cursive;
+    font-size: 25px
+}

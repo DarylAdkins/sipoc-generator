@@ -49,7 +49,7 @@ class SupplierForm extends Component {
         return (
             <>
                 <form>
-                    <fieldset>
+
                         <div className="formgrid">
                             <div className="input-box-container">
                             <p><input className="input-box"
@@ -60,7 +60,7 @@ class SupplierForm extends Component {
                                 id="name"
                                 placeholder="Supplier Name"
                             /></p>
-                            <p><label htmlFor="name">  Enter the Supplier's Name</label></p>
+                            <p><label className="label-text" htmlFor="name">  Enter the Supplier's Name</label></p>
                             <p><input className="input-box"
                                 type="text"
                                 required
@@ -69,7 +69,7 @@ class SupplierForm extends Component {
                                 id="address"
                                 placeholder="Supplier Address"
                             /></p>
-                            <p> <label htmlFor="address">  Enter the Supplier's Address</label></p>
+                            <p> <label className="label-text" htmlFor="address">  Enter the Supplier's Address</label></p>
 
                             <p><input className="input-box"
                                 type="text"
@@ -79,7 +79,7 @@ class SupplierForm extends Component {
                                 id="phone"
                                 placeholder="Supplier Phone"
                             /></p>
-                            <p> <label htmlFor="phone">  Enter the Supplier's Telephone number</label></p>
+                            <p> <label className="label-text" htmlFor="phone">  Enter the Supplier's Telephone number</label></p>
 
                             </div>
                             </div>
@@ -91,7 +91,7 @@ class SupplierForm extends Component {
                                 onClick={this.constructNewSupplier}
                             >Save New Supplier</button>
                         </div>
-                    </fieldset>
+                    
                 </form>
             </>
         )

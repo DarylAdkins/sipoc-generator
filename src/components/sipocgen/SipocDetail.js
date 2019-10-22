@@ -57,16 +57,16 @@ class SipocDetail extends Component {
                 <div className="card">
                     <div className="card-content">
 
-                        <h3 className="sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-                        <div className="flex-container">
-                            <div className="column"><p className="titleboxes">Supplier:</p> <p className="contentboxes">{this.state.supplier}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Input:</p> <p className="contentboxes">{this.state.inputs}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Process:</p> <p className="contentboxes">{this.state.process}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Output:</p> <p className="contentboxes">{this.state.outputs}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Customer:</p> <p className="contentboxes">{this.state.customer}</p></div><br></br>
+                        <h3 className="detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+                        <div className="detail-flex-container">
+                            <div className="detail-column"><p className="detail-titleboxes">Supplier:</p> <p className="detail-contentboxes">{this.state.supplier}</p></div><br></br>
+                            <div className="detail-column"><p className="detail-titleboxes">Input:</p> <p className="detail-contentboxes">{this.state.inputs}</p></div><br></br>
+                            <div className="detail-column"><p className="detail-titleboxes">Process:</p> <p className="detail-contentboxes">{this.state.process}</p></div><br></br>
+                            <div className="detail-column"><p className="detail-titleboxes">Output:</p> <p className="detail-contentboxes">{this.state.outputs}</p></div><br></br>
+                            <div className="detail-column"><p className="detail-titleboxes">Customer:</p> <p className="detail-contentboxes">{this.state.customer}</p></div><br></br>
                         </div>
 
-                        <div className="button-container">
+                        <div className="detail-button-container">
                             <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSipoc}>Delete SIPOC</button>
                             <br></br>
                             <Link to={`/sipoc/${this.state.id}/edit`}><button>Edit SIPOC</button></Link>

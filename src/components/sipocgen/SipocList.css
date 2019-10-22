@@ -1,7 +1,13 @@
 .section-content {
-    padding-left: 40px;
+    display: flex;
+    justify-content: center;
+
 }
 
 .container-cards {
     padding-left: 40px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    flex-wrap: wrap;
 }

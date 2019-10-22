@@ -52,12 +52,12 @@
     {
       "id": 5,
       "name": "Test5",
-      "supplierId": 1,
-      "inputs": "oranges",
+      "supplierId": 4,
+      "inputs": "cheese",
       "process": "ad",
       "outputs": "bananas",
       "customer": "wd",
-      "timeSaved": 1571426375199,
+      "timeSaved": 1571771517596,
       "userId": 2,
       "archive": false
     },

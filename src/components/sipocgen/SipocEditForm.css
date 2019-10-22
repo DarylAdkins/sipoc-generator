@@ -1,4 +1,4 @@
-.titleboxes {
+.edit-form-titleboxes {
     display: flex;
     border-style: solid;
     width: 10vw;
@@ -8,14 +8,14 @@
     font-size: 30px;
 };
 
-.card-content {
+.edit-form-card-content {
     display: flex;
     flex-direction: row;
     border-style: solid;
     size: 90pc;
 }
 
-.contentboxes {
+.edit-form-contentboxes {
     display: flex;
     border-style: solid;
     width: 10vw;
@@ -26,7 +26,7 @@
 
 }
 
-.column {
+.edit-form-column {
     display: flex;
     /* border-style: solid; */
     border-color: gray;
@@ -35,20 +35,20 @@
     align-items: center;
 }
 
-.button-container {
+.edit-form-button-container {
     display: flex;
     justify-content: space-evenly;
     padding-top: 20px
 }
 
-.flex-container {
+.edit-form-flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-left: 25px;
 }
 
-.sipoc-name {
+.edit-form-sipoc-name {
     padding-left: 30px;
     font-family: 'Mansalva', cursive;
     font-size: 25px;

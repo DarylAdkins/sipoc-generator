@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SIPOCManager from "../../modules/SIPOCManager"
 import SipocSearchCard from "./SipocSearchCard"
 import { Link } from "react-router-dom";
+import "./SipocSearch.css"
 
 
 
@@ -24,15 +25,15 @@ class SipocSearch extends Component {
         const search = this.state.search;
 
         SIPOCManager.searchAll(search)
-        .then(returnedSearch => {
-            console.log(returnedSearch)
-            this.setState({
-                returnedSipocs: returnedSearch,
-                loadingStatus: true
-            });
+            .then(returnedSearch => {
+                console.log(returnedSearch)
+                this.setState({
+                    returnedSipocs: returnedSearch,
+                    loadingStatus: true
+                });
 
-            sessionStorage.setItem("keyword", this.state.search)
-        });
+                sessionStorage.setItem("keyword", this.state.search)
+            });
     };
 
 
@@ -43,9 +44,9 @@ class SipocSearch extends Component {
         return (
             <>
                 <form>
-                    <fieldset>
-                        <div >
-                            <input
+
+                        <div className="search-container">
+                            <p><input className="search-box"
                                 type="text"
                                 required
                                 onChange={this.handleFieldChange}
@@ -53,15 +54,16 @@ class SipocSearch extends Component {
                                 id="search"
                                 // value={sessionStorage.getItem("keyword")}
                                 placeholder="Search by Keyword"
-                            />
-                            <label htmlFor="search">SIPOC Search</label>
-                        </div>
-                        <div className="alignRight">
-                            <button
-                                type="button"
+                            /></p>
+                            <p><label className="search-label" htmlFor="search">Search for SIPOCs by keyword</label></p>
 
-                                onClick={this.searchSipoc}
-                            >Search</button>
+                            <div className="search-submit-button">
+                                <button
+                                    type="button"
+
+                                    onClick={this.searchSipoc}
+                                >Search</button>
+                            </div>
                         </div>
 
 
@@ -85,7 +87,7 @@ class SipocSearch extends Component {
 
 
 
-                    </fieldset>
+                    
                 </form>
             </>);
     }

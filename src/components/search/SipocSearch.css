@@ -1,0 +1,15 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-submit-button {
+    display: flex;
+    justify-content: center;
+}
+
+.search-label {
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+}

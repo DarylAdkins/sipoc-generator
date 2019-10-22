@@ -73,7 +73,7 @@ class SipocForm extends Component {
                 <div className="card">
                     <div className="card-content"> <form>
 
-                        <fieldset>
+
                             <div className="sipoc-name">
                                 <label htmlFor="name">SIPOC Title </label>
                                 <input
@@ -183,7 +183,7 @@ class SipocForm extends Component {
                                 >Submit</button>
                             </div>
                             {/* </div> */}
-                        </fieldset>
+                       
                     </form>
                     </div>
                 </div>
