@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import SIPOCManager from "../../modules/SIPOCManager";
 import SupplierManager from "../../modules/SupplierManager"
+import "./SipocEditForm.css"
 
 
 class SipocEditForm extends Component {
@@ -27,30 +28,30 @@ class SipocEditForm extends Component {
     updateExistingSipoc = evt => {
 
         evt.preventDefault()
-        if (this.state.supplierId === "0")
-        {window.alert("Please select a supplier from the dropdown");
+        if (this.state.supplierId === "0") {
+            window.alert("Please select a supplier from the dropdown");
         } else {
 
-        this.setState({ loadingStatus: true });
+            this.setState({ loadingStatus: true });
 
-        const editedSipoc = {
-            id: this.props.match.params.sipocId,
-            name: this.state.name,
-            supplierId: +this.state.supplierId,
-            inputs: this.state.inputs,
-            process: this.state.process,
-            outputs: this.state.outputs,
-            customer: this.state.customer,
-            timeSaved: Date.now(),
-            userId: +sessionStorage.getItem("credentials"),
-            archive: false
+            const editedSipoc = {
+                id: this.props.match.params.sipocId,
+                name: this.state.name,
+                supplierId: +this.state.supplierId,
+                inputs: this.state.inputs,
+                process: this.state.process,
+                outputs: this.state.outputs,
+                customer: this.state.customer,
+                timeSaved: Date.now(),
+                userId: +sessionStorage.getItem("credentials"),
+                archive: false
 
-        };
+            };
 
-      
-        SIPOCManager.update(editedSipoc)
-            .then(() => this.props.history.push("/sipoc"))
-    }
+
+            SIPOCManager.update(editedSipoc)
+                .then(() => this.props.history.push("/sipoc"))
+        }
     }
 
     componentDidMount() {
@@ -67,7 +68,7 @@ class SipocEditForm extends Component {
                 });
             });
 
-            SupplierManager.getAll()
+        SupplierManager.getAll()
             .then((suppliersFromDataBase) => {
                 console.log(suppliersFromDataBase)
                 this.setState({
@@ -83,22 +84,48 @@ class SipocEditForm extends Component {
                 <form>
                     <fieldset>
                         <div className="formgrid">
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                //id must exactly match variable in state
-                                id="name"
-                                value={this.state.name}
-                                placeholder="SIPOC Title"
-                            />
-                            <label htmlFor="name">SIPOC Title</label>
+
+                            <div className="sipoc-name">
+                                <label htmlFor="name">SIPOC Title </label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    //id must exactly match variable in state
+                                    id="name"
+                                    value={this.state.name}
+                                    placeholder="SIPOC Title"
+                                />
+                            </div>
+
+                            <div className="flex-container">
+                                <div className="column">
+                                    <div className="titleboxes">
+                                        <label htmlFor="supplierId">Select Supplier</label>
+                                    </div>
+                                    <div className="contentboxes">
+                                        <select
+                                            className="form-control"
+                                            id="supplierId"
+                                            value={this.state.supplier}
+                                            onChange={this.handleFieldChange}
+                                        >
+                                            {this.state.suppliers.map(supplier =>
+                                                <option key={supplier.id}
+                                                    value={supplier.id}>
+                                                    {supplier.name}
+                                                </option>
+                                            )}
+                                        </select>
+                                    </div>
+
+                                </div>
 
 
-                            <select
+                                {/* <select
                                 className="form-control"
                                 id="supplierId"
-                                value={this.state.supplier}
+
                                 onChange={this.handleFieldChange}
                             >
                                 {this.state.suppliers.map(supplier =>
@@ -107,55 +134,83 @@ class SipocEditForm extends Component {
                                         {supplier.name}
                                     </option>
                                 )}
-                            </select>
+                            </select> */}
 
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="inputs"
-                                value={this.state.inputs}
-                                placeholder="Inputs"
-                            />
-                            <label htmlFor="Inputs">Inputs</label>
+                                <div className="column">
+                                    <div className="titleboxes">
+                                        <label htmlFor="Inputs">Inputs</label>
+                                    </div>
+                                    <div className="contentboxes">
+                                        <textarea
+                                            type="text"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="inputs"
+                                            value={this.state.inputs}
+                                            placeholder="Inputs"
+                                        />
+                                    </div>
+                                </div>
 
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="process"
-                                value={this.state.process}
-                                placeholder="Process"
-                            />
-                            <label htmlFor="process">Process</label>
+                                <div className="column">
+                                    <div className="titleboxes">
+                                        <label htmlFor="process">Process</label>
+                                    </div>
 
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="outputs"
-                                value={this.state.outputs}
-                                placeholder="Outputs"
-                            />
-                            <label htmlFor="outputs">Outputs</label>
+                                    <div className="contentboxes">
+                                        <textarea
+                                            type="textarea"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="process"
+                                            value={this.state.process}
+                                            placeholder="Process"
+                                        />
+                                    </div>
+                                </div>
 
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="customer"
-                                value={this.state.customer}
-                                placeholder="Customers"
-                            />
-                            <label htmlFor="customer">Customers</label>
-                        </div>
+                                <div className="column">
+                                    <div className="titleboxes">
+                                        <label htmlFor="outputs">Outputs</label>
+                                    </div>
+                                    <div className="contentboxes">
+                                        <textarea
+                                            type="text"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="outputs"
+                                            value={this.state.outputs}
+                                            placeholder="Outputs"
+                                        />
+                                    </div>
+                                </div>
 
-                        <div className="alignRight">
-                            <button
-                                type="button"
-                                // disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingSipoc}
-                            >Save Changes</button>
+
+                                <div className="column">
+                                    <div className="titleboxes">
+                                        <label htmlFor="customer">Customers</label>
+                                    </div>
+                                    <div className="contentboxes">
+                                        <textarea
+                                            type="text"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="customer"
+                                            value={this.state.customer}
+                                            placeholder="Customers"
+                                        />
+                                    </div>
+                                </div>
+
+
+                                <div className="alignRight">
+                                    <button
+                                        type="button"
+                                        // disabled={this.state.loadingStatus}
+                                        onClick={this.updateExistingSipoc}
+                                    >Save Changes</button>
+                                </div>
+                            </div>
                         </div>
                     </fieldset>
                 </form>

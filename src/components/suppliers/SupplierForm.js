@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SupplierManager from '../../modules/SupplierManager'
+import "./SupplierForm.css"
 
 
 
@@ -50,38 +51,40 @@ class SupplierForm extends Component {
                 <form>
                     <fieldset>
                         <div className="formgrid">
-                            <input
+                            <div className="input-box-container">
+                            <p><input className="input-box"
                                 type="text"
                                 required
                                 onChange={this.handleFieldChange}
                                 //id must exactly match variable in state
                                 id="name"
                                 placeholder="Supplier Name"
-                            />
-                            <label htmlFor="name">Supplier Name</label>
-                            <p><input
+                            /></p>
+                            <p><label htmlFor="name">  Enter the Supplier's Name</label></p>
+                            <p><input className="input-box"
                                 type="text"
                                 required
                                 onChange={this.handleFieldChange}
 
                                 id="address"
-                                placeholder="Address"
-                            />
-                            <label htmlFor="address">Supplier Address</label></p>
+                                placeholder="Supplier Address"
+                            /></p>
+                            <p> <label htmlFor="address">  Enter the Supplier's Address</label></p>
 
-                            <p><input
+                            <p><input className="input-box"
                                 type="text"
                                 required
                                 onChange={this.handleFieldChange}
 
                                 id="phone"
-                                placeholder="Phone"
-                            />
-                            <label htmlFor="phone">Supplier Phone Number</label></p>
+                                placeholder="Supplier Phone"
+                            /></p>
+                            <p> <label htmlFor="phone">  Enter the Supplier's Telephone number</label></p>
 
                             </div>
+                            </div>
 
-                        <div className="alignRight">
+                        <div className="supplier-form-save-button">
                             <button
                                 type="button"
                                 disabled={this.state.loadingStatus}

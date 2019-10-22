@@ -1,0 +1,16 @@
+.input-box-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box {
+    width: 20vw;
+}
+
+.supplier-form-save-button {
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}

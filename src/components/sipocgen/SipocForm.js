@@ -173,7 +173,9 @@ class SipocForm extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="alignRight">
+                            <br></br>
+                            <br></br>
+                            <div className="form-submit-button">
                                 <button
                                     type="button"
                                     // disabled={this.state.loadingStatus}

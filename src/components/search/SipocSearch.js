@@ -44,7 +44,7 @@ class SipocSearch extends Component {
             <>
                 <form>
                     <fieldset>
-                        <div className="formgrid">
+                        <div >
                             <input
                                 type="text"
                                 required

@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     border-style: solid;
-    size: 90pc;
+    size: 85pc;
 }
 
 .contentboxes {
@@ -52,4 +52,9 @@
     padding-left: 30px;
     font-family: 'Mansalva', cursive;
     font-size: 25px;
+}
+
+.form-submit-button {
+    display: flex;
+    justify-content: center;
 }

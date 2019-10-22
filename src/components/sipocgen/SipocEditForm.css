@@ -1,9 +1,11 @@
 .titleboxes {
     display: flex;
     border-style: solid;
-    width: 15vw;
+    width: 10vw;
     height: fit-content;
     justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 30px;
 };
 
 .card-content {
@@ -16,17 +18,20 @@
 .contentboxes {
     display: flex;
     border-style: solid;
-    width: 15vw;
+    width: 10vw;
     height: max-content;
     justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+
 }
 
 .column {
     display: flex;
-    border-style: solid;
+    /* border-style: solid; */
     border-color: gray;
     flex-direction: column;
-    width: 20vw;
+    width: 15vw;
     align-items: center;
 }
 
@@ -45,4 +50,6 @@
 
 .sipoc-name {
     padding-left: 30px;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
 }
