@@ -56,7 +56,7 @@ class SipocSearchDetail extends Component {
         return (
             this.isValid() ?
                 <div className="card">
-                    <div className="card-content">
+                    <div className="search-detail-card-content">
 
                     <h3 className="search-detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
                         <div className="search-detail-flex-container">
