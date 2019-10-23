@@ -1,7 +1,7 @@
 .edit-form-titleboxes {
     display: flex;
     border-style: solid;
-    width: 10vw;
+    width: 15vw;
     height: fit-content;
     justify-content: center;
     font-family: 'Mansalva', cursive;
@@ -18,7 +18,7 @@
 .edit-form-contentboxes {
     display: flex;
     border-style: solid;
-    width: 10vw;
+    width: 15vw;
     height: max-content;
     justify-content: center;
     font-family: 'Mansalva', cursive;

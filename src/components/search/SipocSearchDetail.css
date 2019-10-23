@@ -1,4 +1,4 @@
-.titleboxes {
+.search-detail-titleboxes {
     display: flex;
     border-style: solid;
     width: 15vw;
@@ -6,14 +6,14 @@
     justify-content: center;
 };
 
-.card-content {
+.search-detail-card-content {
     display: flex;
     flex-direction: row;
     border-style: solid;
     size: 90pc;
 }
 
-.contentboxes {
+.search-detail-contentboxes {
     display: flex;
     border-style: solid;
     width: 15vw;
@@ -21,7 +21,7 @@
     justify-content: center;
 }
 
-.column {
+.search-detail-column {
     display: flex;
     border-style: solid;
     border-color: gray;
@@ -30,19 +30,19 @@
     align-items: center;
 }
 
-.button-container {
+.search-detail-button-container {
     display: flex;
     justify-content: space-evenly;
     padding-top: 20px
 }
 
-.flex-container {
+.search-detail-flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-left: 25px;
 }
 
-.sipoc-name {
+.search-detail-sipoc-name {
     padding-left: 30px;
 }

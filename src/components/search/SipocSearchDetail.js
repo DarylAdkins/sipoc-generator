@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import SIPOCManager from '../../modules/SIPOCManager';
 import { Link } from "react-router-dom";
+import "./SipocSearchDetail.css"
 
 
-class SipocDetail extends Component {
+class SipocSearchDetail extends Component {
 
     state = {
         name: "",
+        step: 1,
         supplierId: "",
         inputs: "",
         process: "",
@@ -35,6 +37,7 @@ class SipocDetail extends Component {
                 this.setState({
                     id: sipoc.id,
                     name: sipoc.name,
+                    step: sipoc.step,
                     supplierId: sipoc.supplierId,
                     inputs: sipoc.inputs,
                     process: sipoc.process,
@@ -55,13 +58,18 @@ class SipocDetail extends Component {
                 <div className="card">
                     <div className="card-content">
 
-                    <h3 className="sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-                        <div className="flex-container">
-                            <div className="column"><p className="titleboxes">Supplier:</p> <p className="contentboxes">{this.state.supplier}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Input:</p> <p className="contentboxes">{this.state.inputs}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Process:</p> <p className="contentboxes">{this.state.process}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Output:</p> <p className="contentboxes">{this.state.outputs}</p></div><br></br>
-                            <div className="column"><p className="titleboxes">Customer:</p> <p className="contentboxes">{this.state.customer}</p></div><br></br>
+                    <h3 className="search-detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+                        <div className="search-detail-flex-container">
+
+                        <p className="search-detail-search-step-number">Step: {this.state.step}</p>
+                            <div className="search-detail-column"><p className="search-detail-titleboxes">Supplier:</p> <p className="search-detail-contentboxes">{this.state.supplier}</p></div><br></br>
+                            <div className="search-detail-column"><p className="search-detail-titleboxes">Input:</p> <p className="search-detail-contentboxes">{this.state.inputs}</p></div><br></br>
+                            <div className="search-detail-column"><p className="search-detail-titleboxes">Process:</p> <p className="search-detail-contentboxes">{this.state.process}</p></div><br></br>
+                            <div className="search-detail-column"><p className="search-detail-titleboxes">Output:</p> <p className="search-detail-contentboxes">{this.state.outputs}</p></div><br></br>
+                            <div className="search-detail-column"><p className="search-detail-titleboxes">Customer:</p> <p className="search-detail-contentboxes">{this.state.customer}</p></div><br></br>
+
+
+
                         </div>
 
                         <div className="button-container">
@@ -80,5 +88,5 @@ class SipocDetail extends Component {
     }
 }
 
-export default SipocDetail;
+export default SipocSearchDetail;
 

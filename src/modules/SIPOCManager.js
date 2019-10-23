@@ -40,7 +40,7 @@ export default {
         }).then(data => data.json());
     },
     searchAll(search) {
-        return fetch(`${remoteURL}/sipocs?q=${search}&userId=${sessionStorage.getItem("credentials")}`).then(result => result.json())
+        return fetch(`${remoteURL}/sipocs?q=${search}&_expand=supplier&userId=${sessionStorage.getItem("credentials")}&_sort=step&_order=asc`).then(result => result.json())
     },
 }
 

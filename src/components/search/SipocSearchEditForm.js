@@ -8,6 +8,7 @@ class SipocEditForm extends Component {
     //set the initial state
     state = {
         name: "",
+        step: 1,
         supplierId: "",
         inputs: "",
         process: "",
@@ -37,6 +38,7 @@ class SipocEditForm extends Component {
             const editedSipoc = {
                 id: this.props.match.params.sipocId,
                 name: this.state.name,
+                step: +this.state.step,
                 supplierId: +this.state.supplierId,
                 inputs: this.state.inputs,
                 process: this.state.process,
@@ -59,6 +61,7 @@ class SipocEditForm extends Component {
             .then(sipoc => {
                 this.setState({
                     name: sipoc.name,
+                    step: +sipoc.step,
                     supplierId: sipoc.supplierId,
                     inputs: sipoc.inputs,
                     process: sipoc.process,
@@ -95,6 +98,17 @@ class SipocEditForm extends Component {
                                 id="name"
                                 value={this.state.name}
                                 placeholder="SIPOC Title"
+                            />
+
+                            <label htmlFor="step">   Process Step Number </label>
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                //id must exactly match variable in state
+                                id="step"
+                                value={this.state.step}
+                                placeholder="Enter Step Number (ex. 1)"
                             />
                         </div>
 

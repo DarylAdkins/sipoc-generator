@@ -32,8 +32,8 @@ class SipocList extends Component {
             <>
                 <section className="section-content">
                     <div>
-                        <p><Link to="/sipoc/new"><button>Create New SIPOCs</button></Link></p>
-                        <p><Link to="/sipoc/search"><button>Search for Existing SIPOCs</button></Link></p>
+                        <p><Link to="/sipoc/new"><button>Create New SIPOCs</button></Link>
+                           <Link to="/sipoc/search"><button>Search for Existing SIPOCs</button></Link></p>
                     </div>
                 </section>
                 <div className="container-cards">
