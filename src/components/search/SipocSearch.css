@@ -68,7 +68,8 @@
     font-size: 15px;
 }
 
-.search-container-cards {
-    
+.search-details-button {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
 }
-

@@ -46,3 +46,8 @@
 .search-detail-sipoc-name {
     padding-left: 30px;
 }
+
+.search-detail-search-step-number {
+    font-family: 'Mansalva', cursive;
+    font-size: 15px;
+}

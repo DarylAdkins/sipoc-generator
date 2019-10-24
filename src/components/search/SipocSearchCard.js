@@ -25,8 +25,9 @@ class SipocSearchCard extends Component {
                             <div className="column"><p className="titleboxes">Customer:</p> <p className="contentboxes">{this.props.returnedSipoc.customer}</p></div><br></br>
                         </div>
 
-
+                        <div className="search-details-button">
                         <Link to={`/sipoc/searchedit/details/${this.props.returnedSipoc.id}?_expand=supplier`}><button>Details</button></Link>
+                        </div>
 
 
 

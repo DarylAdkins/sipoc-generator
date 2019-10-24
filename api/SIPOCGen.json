@@ -3,30 +3,31 @@
     {
       "id": 21,
       "name": "Make Tuna Sandwich",
-      "step": 4,
+      "step": 1,
       "supplierId": 1,
       "inputs": "Tuna",
       "process": "Drain tuna can and place tuna in bowl.",
       "outputs": "Drained tuna in a mixing bowl",
       "customer": "Mayo mixing step.",
-      "timeSaved": 1571855606543,
+      "timeSaved": 1571945167094,
       "userId": 2,
       "archive": false
     },
     {
       "id": 22,
       "name": "Make Tuna Sandwich",
-      "step": 5,
+      "step": 2,
       "supplierId": 3,
       "inputs": "Mayonnaise",
       "process": "Add mayo to mixing bowl and stir until homogeneous",
       "outputs": "Homogeneous mixture of tuna and mayo ",
       "customer": "Sandwich finishing step",
-      "timeSaved": 1571924599893,
+      "timeSaved": 1571940238275,
       "userId": 2,
       "archive": false
     },
     {
+      "id": 23,
       "name": "Make Tuna Sandwich",
       "step": 3,
       "supplierId": 4,
@@ -34,10 +35,9 @@
       "process": "Spread tuna/mayo mixture on 2 slices of bread. Place the bread slices together with tuna mixture between the bread slices",
       "outputs": "Completed tuna sandwich",
       "customer": "Diners",
-      "timeSaved": 1571842483628,
+      "timeSaved": 1571940196051,
       "userId": 2,
-      "archive": false,
-      "id": 23
+      "archive": false
     },
     {
       "id": 24,
