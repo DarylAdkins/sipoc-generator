@@ -69,7 +69,7 @@ class SipocSearch extends Component {
 
                         <br />
                         <br />
-                        <div className="container-cards">
+                        <div className="search-container-cards">
 
                             {this.state.returnedSipocs.map(returnedSipoc =>
                                 !returnedSipoc.archived ? (

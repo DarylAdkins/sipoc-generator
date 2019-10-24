@@ -4,8 +4,12 @@
     height: fit-content;
     justify-content: left;
     font-family: 'Mansalva', cursive;
-    font-size: 25px;
+    font-size: 20px;
     color: green;
     padding: 3px;
     margin:  5px;
+}
+
+.sipoc-card-content {
+    size: 60pc
 }

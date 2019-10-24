@@ -24,7 +24,7 @@
 
 .search-card-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border-style: solid;
     size: 90pc;
 }
@@ -66,5 +66,9 @@
 .search-step-number {
     font-family: 'Mansalva', cursive;
     font-size: 15px;
+}
+
+.search-container-cards {
+    
 }
 

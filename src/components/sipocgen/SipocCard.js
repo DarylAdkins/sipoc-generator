@@ -10,7 +10,7 @@ class SipocCard extends Component {
         return (
 
                 <div className="card">
-                    <div className="card-content">
+                    <div className="sipoc-card-content">
 
                         <p className="sipoc-name1">SIPOC Name: <span>{this.props.sipoc.name}</span></p>
                         <p className="sipoc-name1">Step: <span>{this.props.sipoc.step}</span></p>

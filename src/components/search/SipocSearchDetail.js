@@ -58,7 +58,7 @@ class SipocSearchDetail extends Component {
                 <div className="card">
                     <div className="search-detail-card-content">
 
-                    <h3 className="search-detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+                    <h3 className="search-detail-sipoc-name">SIPOC Name:  <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
                         <div className="search-detail-flex-container">
 
                         <p className="search-detail-search-step-number">Step: {this.state.step}</p>

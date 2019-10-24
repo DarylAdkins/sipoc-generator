@@ -16,13 +16,13 @@
     {
       "id": 22,
       "name": "Make Tuna Sandwich",
-      "step": 2,
+      "step": 5,
       "supplierId": 3,
       "inputs": "Mayonnaise",
       "process": "Add mayo to mixing bowl and stir until homogeneous",
       "outputs": "Homogeneous mixture of tuna and mayo ",
       "customer": "Sandwich finishing step",
-      "timeSaved": 1571857772948,
+      "timeSaved": 1571924599893,
       "userId": 2,
       "archive": false
     },
@@ -42,13 +42,13 @@
     {
       "id": 24,
       "name": "test1",
-      "step": 2,
+      "step": 1,
       "supplierId": 1,
       "inputs": "wef",
       "process": "few",
       "outputs": "6y",
       "customer": "rf",
-      "timeSaved": 1571859041804,
+      "timeSaved": 1571923046128,
       "userId": 2,
       "archive": false
     }

@@ -5,9 +5,8 @@
 }
 
 .container-cards {
-    border-style: dashed;
     padding-left: 40px;
-    height: 25pc;
+    height: 23pc;
     display: flex;
     justify-content: left;
     flex-direction: column;
