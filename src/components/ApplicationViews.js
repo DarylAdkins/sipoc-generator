@@ -12,6 +12,7 @@ import Callback from "./auth/Callback"
 import SipocSearch from "./search/SipocSearch"
 import SipocSearchDetail from "./search/SipocSearchDetail"
 import SipocSearchEditForm from "./search/SipocSearchEditForm"
+import FlowHTML from "./Flowchart/FlowHTML"
 
 
 
@@ -156,6 +157,20 @@ class ApplicationViews extends Component {
                     render={props => {
                         if (Auth0Client.isAuthenticated()) {
                             return <SupplierForm {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+                <Route exact path="/callback" component={Callback} />
+
+                <Route
+                    exact
+                    path="/flowchart"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <FlowHTML {...props} />;
                         } else {
                             Auth0Client.signIn();
                             return null;

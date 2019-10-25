@@ -19,9 +19,13 @@ class SipocSearchCard extends Component {
                         <div className="flex-container">
                         <p className="search-step-number">Step: {this.props.returnedSipoc.step}</p>
                             <div className="column"><p className="titleboxes">Supplier:</p> <p className="contentboxes">{this.props.returnedSipoc.supplier.name}</p></div><br></br>
+                            <p><i class="arrow right"></i></p>
                             <div className="column"><p className="titleboxes">Input:</p> <p className="contentboxes">{this.props.returnedSipoc.inputs}</p></div><br></br>
+                            <p><i class="arrow right"></i></p>
                             <div className="column"><p className="titleboxes">Process:</p> <p className="contentboxes">{this.props.returnedSipoc.process}</p></div><br></br>
+                            <p><i class="arrow right"></i></p>
                             <div className="column"><p className="titleboxes">Output:</p> <p className="contentboxes">{this.props.returnedSipoc.outputs}</p></div><br></br>
+                            <p><i class="arrow right"></i></p>
                             <div className="column"><p className="titleboxes">Customer:</p> <p className="contentboxes">{this.props.returnedSipoc.customer}</p></div><br></br>
                         </div>
 
