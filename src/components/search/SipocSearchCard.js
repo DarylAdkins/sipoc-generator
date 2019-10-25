@@ -14,23 +14,48 @@ class SipocSearchCard extends Component {
 
                         {/* <h3>SIPOC Name: <span style={{ color: 'darkslategrey', fontFamily: 'ariel' }}>{this.props.returnedSipoc.name}</span></h3> */}
 
-                        <h3 className="sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.props.returnedSipoc.name}</span></h3>
+                        <h3 className="search-sipoc-name"><span style={{ color: 'darkslategrey' }}>{this.props.returnedSipoc.name}   Step: {this.props.returnedSipoc.step}</span></h3>
+                        {/* <h2 className="search-step-number">Step: {this.props.returnedSipoc.step}></h2> */}
 
                         <div className="flex-container">
-                        <p className="search-step-number">Step: {this.props.returnedSipoc.step}</p>
-                            <div className="column"><p className="titleboxes">Supplier:</p> <p className="contentboxes">{this.props.returnedSipoc.supplier.name}</p></div><br></br>
-                            <p><i class="arrow right"></i></p>
-                            <div className="column"><p className="titleboxes">Input:</p> <p className="contentboxes">{this.props.returnedSipoc.inputs}</p></div><br></br>
-                            <p><i class="arrow right"></i></p>
-                            <div className="column"><p className="titleboxes">Process:</p> <p className="contentboxes">{this.props.returnedSipoc.process}</p></div><br></br>
-                            <p><i class="arrow right"></i></p>
-                            <div className="column"><p className="titleboxes">Output:</p> <p className="contentboxes">{this.props.returnedSipoc.outputs}</p></div><br></br>
-                            <p><i class="arrow right"></i></p>
-                            <div className="column"><p className="titleboxes">Customer:</p> <p className="contentboxes">{this.props.returnedSipoc.customer}</p></div><br></br>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Supplier:</p>
+                                <p className="search-contentboxes">{this.props.returnedSipoc.supplier.name}</p>
+                            </div>
+                                <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Input:</p>
+                                <p className="search-contentboxes">{this.props.returnedSipoc.inputs}</p>
+                            </div>
+                                 <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Process:</p>
+                                <p className="search-contentboxes">{this.props.returnedSipoc.process}</p>
+
+                            </div>
+                                <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Output:</p>
+                                <p className="search-contentboxes">{this.props.returnedSipoc.outputs}</p>
+                            </div>
+                                <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Customer:</p>
+                                <p className="search-contentboxes">{this.props.returnedSipoc.customer}</p>
+                            </div>
                         </div>
 
                         <div className="search-details-button">
                         <Link to={`/sipoc/searchedit/details/${this.props.returnedSipoc.id}?_expand=supplier`}><button>Details</button></Link>
+
+                        </div>
+                        <div className="search-down-arrow-container">
+                        <i className="down"></i>
                         </div>
 
 
