@@ -15,8 +15,8 @@ class SupplierList extends Component {
 
 
     componentDidMount() {
-        console.log("SIPOC List: ComponentDidMount");
-        //getAll from SIPOCManager and hang on to that data; put it in state
+
+        //getAll from Supplier Manager and hang on to that data; put it in state
         SupplierManager.getAll()
             .then((suppliersFromDataBase) => {
                 console.log(suppliersFromDataBase)

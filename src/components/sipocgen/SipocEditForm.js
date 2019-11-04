@@ -185,6 +185,7 @@ class SipocEditForm extends Component {
                             </div>
 
 
+
                             <div className="edit-form-column">
                                 <div className="edit-form-titleboxes">
                                     <label htmlFor="customer">Customers</label>
@@ -200,17 +201,20 @@ class SipocEditForm extends Component {
                                     />
                                 </div>
                             </div>
+                            </div>
 
 
-                            <div className="edit-form-button-container">
+
+                            <p><div className="edit-form-button-container">
                                 <button
                                     type="button"
                                     disabled={this.state.loadingStatus}
                                     onClick={this.updateExistingSipoc}
                                 >Save Changes</button>
-                            </div>
+                            </div></p>
                         </div>
-                    </div>
+
+
 
                 </form>
             </>

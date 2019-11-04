@@ -36,7 +36,6 @@ class SupplierForm extends Component {
                 address: this.state.address,
                 phone: this.state.phone,
                 userId: sessionStorage.getItem("credentials"),
-                loadingStatus: true,
                 archived: false,
             };
 

@@ -11,7 +11,7 @@ class SupplierEditForm extends Component {
         address: "",
         phone: "",
         active: true,
-        userId:"",
+        userId: "",
         loadingStatus: false,
     };
 
@@ -35,7 +35,8 @@ class SupplierEditForm extends Component {
                 address: this.state.address,
                 phone: this.state.phone,
                 userId: sessionStorage.getItem("credentials"),
-                loadingStatus: true,
+                archived: false,
+                
             };
 
 
@@ -49,25 +50,27 @@ class SupplierEditForm extends Component {
         SupplierManager.getOne(this.props.match.params.supplierId)
             .then(supplier => {
                 this.setState({
+                    id: supplier.id,
                     name: supplier.name,
                     address: supplier.address,
                     phone: supplier.phone,
-                    loadingStatus: false,
+                    userId: sessionStorage.getItem("credentials"),
+                    archived: false,
                 });
             });
-        }
+    }
 
 
 
 
-       render() {
+    render() {
 
         return (
             <>
                 <form>
 
-                        <div className="formgrid">
-                            <div className="input-box-container">
+                    <div className="formgrid">
+                        <div className="input-box-container">
                             <p><input className="input-box"
                                 type="text"
                                 required
@@ -100,16 +103,16 @@ class SupplierEditForm extends Component {
                             /></p>
                             <p> <label className="label-text" htmlFor="phone">  Enter the Supplier's Telephone number</label></p>
 
-                            </div>
-                            </div>
-
-                        <div className="supplier-form-save-button">
-                            <button
-                                type="button"
-                                disabled={this.state.loadingStatus}
-                                onClick={this.constructEditedSupplier}
-                            >Save Edited Supplier</button>
                         </div>
+                    </div>
+
+                    <div className="supplier-form-save-button">
+                        <button
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.constructEditedSupplier}
+                        >Save Edited Supplier</button>
+                    </div>
 
                 </form>
             </>

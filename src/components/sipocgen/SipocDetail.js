@@ -58,26 +58,53 @@ class SipocDetail extends Component {
                     <div className="card-content">
 
                         <h3 className="detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-                        <div className="detail-flex-container">
-                            <div className="detail-column"><p className="detail-titleboxes">Supplier:</p> <p className="detail-contentboxes">{this.state.supplier}</p></div><br></br>
-                            <div className="detail-column"><p className="detail-titleboxes">Input:</p> <p className="detail-contentboxes">{this.state.inputs}</p></div><br></br>
-                            <div className="detail-column"><p className="detail-titleboxes">Process:</p> <p className="detail-contentboxes">{this.state.process}</p></div><br></br>
-                            <div className="detail-column"><p className="detail-titleboxes">Output:</p> <p className="detail-contentboxes">{this.state.outputs}</p></div><br></br>
-                            <div className="detail-column"><p className="detail-titleboxes">Customer:</p> <p className="detail-contentboxes">{this.state.customer}</p></div><br></br>
-                        </div>
+                        <div className="flex-container">
 
-                        <div className="detail-button-container">
-                            <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSipoc}>Delete SIPOC</button>
-                            <br></br>
-                            <Link to={`/sipoc/${this.state.id}/edit`}><button>Edit SIPOC</button></Link>
+                            <div className="search-column">
+                                <p className="search-titleboxes">Supplier:</p>
+                                <p className="search-contentboxes">{this.state.supplier}</p>
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Input:</p>
+                                <p className="search-contentboxes">{this.state.inputs}</p>
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Process:</p>
+                                <p className="search-contentboxes">{this.state.process}</p>
+
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Output:</p>
+                                <p className="search-contentboxes">{this.state.outputs}</p>
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Customer:</p>
+                                <p className="search-contentboxes">{this.state.customer}</p>
+                            </div>
+                            </div>
+
+
+                            <p><div className="sipoc-detail-button-container">
+                                <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSipoc}>Delete SIPOC</button>
+                                <br></br>
+                                <Link to={`/sipoc/${this.state.id}/edit`}><button>Edit SIPOC</button></Link>
+                            </div></p>
                         </div>
                     </div>
-                </div>
-                :
-                <p>Item does not exist</p>
-        );
-    }
-}
 
-export default SipocDetail;
+                    :
+                <p>Item does not exist</p>
+                    );
+                }
+            }
+
+            export default SipocDetail;
 

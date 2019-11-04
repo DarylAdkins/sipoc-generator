@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SupplierManager from '../../modules/SupplierManager';
 import { Link } from "react-router-dom";
-// import './SipocDetail.css'
+import './SupplierDetail.css'
 
 
 
@@ -51,16 +51,18 @@ class SupplierDetail extends Component {
                 <div className="card">
                     <div className="card-content">
 
-                        <h3 className="detail-supplier-name">Supplier Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-                        <div className="detail-flex-container">
+                        <h3 className="supplier-detail-supplier-name">Supplier Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+                        <div className="supplier-detail-flex-container">
 
-                            <p className="detail-titleboxes">Address:</p> <p className="detail-contentboxes">{this.state.address}</p><br></br>
-                            <p className="detail-titleboxes">Phone:</p> <p className="detail-contentboxes">{this.state.phone}</p><br></br>
+                            <p className="supplier-detail-titleboxes">Address:</p>
+                            <p className="supplier-detail-contentboxes">{this.state.address}</p><br></br>
+                            <p className="supplier-detail-titleboxes">Phone:</p>
+                            <p className="supplier-detail-contentboxes">{this.state.phone}</p><br></br>
 
 
                         </div>
 
-                        <div className="detail-button-container">
+                        <div className="supplier-detail-button-container">
                             <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSupplier}>Delete Supplier</button>
                             <br></br>
                             <Link to={`/supplier/${this.state.id}/edit`}><button>Edit Supplier</button></Link>

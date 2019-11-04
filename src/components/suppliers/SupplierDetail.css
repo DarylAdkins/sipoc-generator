@@ -1,24 +1,24 @@
-.detail-titleboxes {
+.supplier-detail-titleboxes {
     display: flex;
-    border-style: solid;
-    width: 15vw;
+    /* border-style: solid; */
+    /* width: 15vw; */
     height: fit-content;
     justify-content: center;
     font-family: 'Mansalva', cursive;
-    font-size: 30px;
+    font-size: 25px;
 };
 
-.detail-card-content {
+.supplier-detail-card-content {
     display: flex;
     flex-direction: row;
     border-style: solid;
     size: 90pc;
 }
 
-.detail-contentboxes {
+.supplier-detail-contentboxes {
     display: flex;
-    border-style: solid;
-    width: 15vw;
+    /* border-style: solid; */
+    /* width: 15vw; */
     height: max-content;
     justify-content: center;
     font-family: 'Mansalva', cursive;
@@ -26,7 +26,7 @@
 
 }
 
-.detail-column {
+.supplier-detail-column {
     display: flex;
     /* border-style: solid; */
     border-color: gray;
@@ -35,20 +35,22 @@
     align-items: center;
 }
 
-.sipoc-detail-button-container {
+.supplier-detail-button-container {
     display: flex;
     justify-content: center;
-    padding-top: 20px
+    /* padding-top: 20px */
 }
 
-.detail-flex-container {
+/* .supplier-detail-flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-left: 25px;
-}
+} */
 
-.detail-sipoc-name {
+.supplier-detail-supplier-name {
+    display: flex;
+    justify-content: center;
     padding-left: 30px;
     font-family: 'Mansalva', cursive;
     font-size: 25px;
