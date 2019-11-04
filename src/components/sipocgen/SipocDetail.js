@@ -37,6 +37,7 @@ class SipocDetail extends Component {
                 this.setState({
                     id: sipoc.id,
                     name: sipoc.name,
+                    step: sipoc.step,
                     supplierId: sipoc.supplierId,
                     inputs: sipoc.inputs,
                     process: sipoc.process,
@@ -57,7 +58,8 @@ class SipocDetail extends Component {
                 <div className="card">
                     <div className="card-content">
 
-                        <h3 className="detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+                        <h3 className="detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span>
+                          Step: <span>{this.state.step}</span></h3>
                         <div className="flex-container">
 
                             <div className="search-column">

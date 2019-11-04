@@ -34,9 +34,9 @@ class SupplierEditForm extends Component {
                 name: this.state.name,
                 address: this.state.address,
                 phone: this.state.phone,
-                userId: sessionStorage.getItem("credentials"),
+                userId: +sessionStorage.getItem("credentials"),
                 archived: false,
-                
+
             };
 
 

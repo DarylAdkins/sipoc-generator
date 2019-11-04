@@ -9,7 +9,7 @@
       "process": "Drain tuna can and empty tuna into bowl.",
       "outputs": "Drained tuna in a mixing bowl",
       "customer": "Mayo mixing step.",
-      "timeSaved": 1572876455013,
+      "timeSaved": 1572878201303,
       "userId": 2,
       "archive": false
     },
@@ -24,7 +24,7 @@
       "customer": "Sandwich finishing step",
       "timeSaved": 1572872572699,
       "userId": 2,
-      "archive": false
+      "archived": false
     },
     {
       "id": 23,
@@ -35,9 +35,9 @@
       "process": "Spread tuna/mayo mixture on 2 slices of bread. Place the bread slices together with tuna mixture between the bread slices",
       "outputs": "Completed tuna sandwich",
       "customer": "Diners",
-      "timeSaved": 1572832635051,
+      "timeSaved": 1572878187054,
       "userId": 2,
-      "archive": false
+      "archived": false
     },
     {
       "id": 24,
@@ -50,7 +50,6 @@
       "customer": "rf",
       "timeSaved": 1571923046128,
       "userId": 2,
-      "archive": false,
       "archived": true
     }
   ],
@@ -84,10 +83,10 @@
   "suppliers": [
     {
       "id": 1,
-      "name": "Kroger",
+      "name": "Kroger, Inc.",
       "address": "5th Avenue",
       "phone": "304-544-5698",
-      "userId": 1,
+      "userId": 2,
       "archived": false
     },
     {
@@ -99,11 +98,11 @@
       "archived": false
     },
     {
+      "id": 4,
       "name": "Bobs",
       "address": "123 Street",
       "phone": "6416841646",
-      "userId": 1,
-      "id": 4,
+      "userId": 2,
       "archived": false
     },
     {
@@ -111,14 +110,14 @@
       "name": "Lowes, LLC",
       "address": "456 Main Street, Huntington",
       "phone": "304-521-6487",
-      "userId": "2",
+      "userId": 2,
       "archived": false
     },
     {
       "name": "Home Depot",
       "address": "123",
       "phone": "911",
-      "userId": "3",
+      "userId": 2,
       "id": 6,
       "archived": false
     },
@@ -126,7 +125,7 @@
       "name": "Tractor",
       "address": "ohio",
       "phone": "1234",
-      "userId": "5",
+      "userId": 3,
       "id": 7,
       "archived": false
     }

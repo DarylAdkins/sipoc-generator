@@ -46,7 +46,7 @@ class SipocEditForm extends Component {
                 customer: this.state.customer,
                 timeSaved: Date.now(),
                 userId: +sessionStorage.getItem("credentials"),
-                archive: false
+                archived: false
 
             };
 

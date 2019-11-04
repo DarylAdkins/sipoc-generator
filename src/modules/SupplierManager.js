@@ -3,7 +3,7 @@ const remoteURL = "http://localhost:5002"
 export default {
 
     getAll() {
-        return fetch(`${remoteURL}/suppliers?archived=false`).then(result => result.json())
+        return fetch(`${remoteURL}/suppliers?archived=false&userID=${sessionStorage.getItem("credentials")}`).then(result => result.json())
     },
 
     getOne(id) {

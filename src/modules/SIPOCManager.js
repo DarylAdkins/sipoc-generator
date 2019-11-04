@@ -3,7 +3,7 @@ const remoteURL = "http://localhost:5002"
 export default {
 
     getAll() {
-        return fetch(`${remoteURL}/sipocs?_expand=supplier&userId=${sessionStorage.getItem("credentials")}`).then(result => result.json())
+        return fetch(`${remoteURL}/sipocs?_expand=supplier&archived=false&userId=${sessionStorage.getItem("credentials")}`).then(result => result.json())
     },
 
     getOne(id) {
