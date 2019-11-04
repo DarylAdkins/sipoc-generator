@@ -58,16 +58,41 @@ class SipocSearchDetail extends Component {
                 <div className="card">
                     <div className="search-detail-card-content">
 
-                    <h3 className="search-detail-sipoc-name">SIPOC Name:  <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
+                    <h3 className="search-detail-sipoc-name">SIPOC Name:  <span style={{ color: 'darkslategrey' }}>{this.state.name}</span>
+                      Step: {this.state.step}</h3>
                         <div className="search-detail-flex-container">
 
-                        <p className="search-detail-search-step-number">Step: {this.state.step}</p>
-                            <div className="search-detail-column"><p className="search-detail-titleboxes">Supplier:</p> <p className="search-detail-contentboxes">{this.state.supplier}</p></div><br></br>
-                            <div className="search-detail-column"><p className="search-detail-titleboxes">Input:</p> <p className="search-detail-contentboxes">{this.state.inputs}</p></div><br></br>
-                            <div className="search-detail-column"><p className="search-detail-titleboxes">Process:</p> <p className="search-detail-contentboxes">{this.state.process}</p></div><br></br>
-                            <div className="search-detail-column"><p className="search-detail-titleboxes">Output:</p> <p className="search-detail-contentboxes">{this.state.outputs}</p></div><br></br>
-                            <div className="search-detail-column"><p className="search-detail-titleboxes">Customer:</p> <p className="search-detail-contentboxes">{this.state.customer}</p></div><br></br>
 
+                        <div className="search-column">
+                                <p className="search-titleboxes">Supplier:</p>
+                                <p className="search-contentboxes">{this.state.supplier}</p>
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Input:</p>
+                                <p className="search-contentboxes">{this.state.inputs}</p>
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Process:</p>
+                                <p className="search-contentboxes">{this.state.process}</p>
+
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Output:</p>
+                                <p className="search-contentboxes">{this.state.outputs}</p>
+                            </div>
+                            <p><i className="right"></i></p>
+
+                            <div className="search-column">
+                                <p className="search-titleboxes">Customer:</p>
+                                <p className="search-contentboxes">{this.state.customer}</p>
+                            </div>
+                            </div>
 
 
                         </div>
@@ -81,7 +106,7 @@ class SipocSearchDetail extends Component {
 
 
                 </div>
-                </div>
+                
                 :
                 <p>Item does not exist</p>
         );

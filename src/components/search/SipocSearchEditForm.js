@@ -88,7 +88,7 @@ class SipocEditForm extends Component {
 
                     <div className="search-edit-form-formgrid">
 
-                        <div className="edit-form-sipoc-name">
+                        <div className="search-edit-form-sipoc-name">
                             <label htmlFor="name">SIPOC Title </label>
                             <input
                                 type="text"
