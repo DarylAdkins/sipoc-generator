@@ -9,7 +9,7 @@
       "process": "Drain tuna can and empty tuna into bowl.",
       "outputs": "Drained tuna in a mixing bowl",
       "customer": "Mayo mixing step.",
-      "timeSaved": 1572871381716,
+      "timeSaved": 1572876455013,
       "userId": 2,
       "archive": false
     },
@@ -108,8 +108,8 @@
     },
     {
       "id": 5,
-      "name": "Lowes",
-      "address": "123 Main Street, Huntington",
+      "name": "Lowes, LLC",
+      "address": "456 Main Street, Huntington",
       "phone": "304-521-6487",
       "userId": "2",
       "archived": false
