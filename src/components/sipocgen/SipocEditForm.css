@@ -37,7 +37,7 @@
 
 .edit-form-button-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding-top: 20px
 }
 

@@ -9,7 +9,7 @@
       "process": "Drain tuna can and place tuna in bowl.",
       "outputs": "Drained tuna in a mixing bowl",
       "customer": "Mayo mixing step.",
-      "timeSaved": 1571945167094,
+      "timeSaved": 1572839160374,
       "userId": 2,
       "archive": false
     },
@@ -35,7 +35,7 @@
       "process": "Spread tuna/mayo mixture on 2 slices of bread. Place the bread slices together with tuna mixture between the bread slices",
       "outputs": "Completed tuna sandwich",
       "customer": "Diners",
-      "timeSaved": 1571940196051,
+      "timeSaved": 1572832635051,
       "userId": 2,
       "archive": false
     },
@@ -97,7 +97,7 @@
       "phone": "304-544-5698",
       "active": true,
       "userId": 1,
-      "archived": false
+      "archived": true
     },
     {
       "name": "Walmart",
@@ -105,7 +105,8 @@
       "phone": "304-785-4597",
       "userId": 1,
       "loadingStatus": true,
-      "id": 3
+      "id": 3,
+      "archived": false
     },
     {
       "name": "Bobs",
@@ -113,7 +114,8 @@
       "phone": "6416841646",
       "userId": 1,
       "loadingStatus": true,
-      "id": 4
+      "id": 4,
+      "archived": true
     },
     {
       "name": "Lowes",
@@ -121,7 +123,8 @@
       "phone": "911",
       "userId": "3",
       "loadingStatus": true,
-      "id": 5
+      "id": 5,
+      "archived": false
     },
     {
       "name": "Home Depot",
@@ -129,7 +132,8 @@
       "phone": "911",
       "userId": "3",
       "loadingStatus": true,
-      "id": 6
+      "id": 6,
+      "archived": false
     },
     {
       "name": "Tractor",
@@ -137,7 +141,8 @@
       "phone": "1234",
       "userId": "5",
       "loadingStatus": true,
-      "id": 7
+      "id": 7,
+      "archived": true
     }
   ]
 }

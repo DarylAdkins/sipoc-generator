@@ -2,7 +2,7 @@ import { Route, withRouter, Redirect } from "react-router-dom"
 import React, { Component } from 'react'
 import Home from './home/Home'
 import SipocList from "./sipocgen/SipocList"
-// import SupplierList from "./suppliers/SupplierList"
+import SupplierList from "./suppliers/SupplierList"
 import SipocForm from "./sipocgen/SipocForm"
 import SupplierForm from "./suppliers/SupplierForm"
 import SipocDetail from "./sipocgen/SipocDetail"
@@ -12,6 +12,8 @@ import Callback from "./auth/Callback"
 import SipocSearch from "./search/SipocSearch"
 import SipocSearchDetail from "./search/SipocSearchDetail"
 import SipocSearchEditForm from "./search/SipocSearchEditForm"
+import SupplierEditForm from "./suppliers/SupplierEditForm"
+import SupplierDetail from "./suppliers/SupplierDetail"
 
 
 
@@ -151,6 +153,11 @@ class ApplicationViews extends Component {
                 />
 
 
+
+
+
+
+
                 <Route
                     exact
                     path="/supplier/new"
@@ -163,9 +170,72 @@ class ApplicationViews extends Component {
                         }
                     }}
                 />
+
+
+
+                <Route
+                    exact
+                    path="/supplier/edit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierEditForm {...props}
+                            // sipocId={parseInt(props.match.params.sipocId)}
+                            />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
+                    path="/supplier/:supplierId(\d+)/edit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierEditForm {...props} supplierId={parseInt(props.match.params.supplierId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/supplier"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierList {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
+                    path="/supplier/:supplierId(\d+)"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierDetail {...props} supplierId={parseInt(props.match.params.supplierId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+
+
+
                 <Route exact path="/callback" component={Callback} />
 
-               
+
 
 
             </React.Fragment>

@@ -23,11 +23,12 @@ class NavBar extends Component {
                             <React.Fragment>
                                 <div className="container">
                                     <p><Link className="nav-link" to="/home">Home</Link></p>
-                                    <p><Link className="nav-link" to="/sipoc">  View/Create/Edit SIPOCS  </Link></p>
-                                    <p><Link className="nav-link" to="/supplier/new">  Enter New Supplier  </Link></p>
+                                    <p><Link className="nav-link" to="/sipoc">  SIPOCs  </Link></p>
+                                    <p><Link className="nav-link" to="/supplier">  Suppliers  </Link></p>
+                                    
 
                                     <div id="userdiv">
-                                        <div id="user"> 
+                                        <div id="user">
                                             {auth0Client.getProfile().name}
                                         </div>
                                     </div>

@@ -4,7 +4,7 @@ import "./SupplierForm.css"
 
 
 
-class SupplierForm extends Component {
+class SupplierEditForm extends Component {
     state = {
         id: "",
         name: "",
@@ -13,8 +13,6 @@ class SupplierForm extends Component {
         active: true,
         userId:"",
         loadingStatus: false,
-        archived: false,
-
     };
 
     handleFieldChange = evt => {
@@ -25,27 +23,42 @@ class SupplierForm extends Component {
 
     /*  Local method for validation, set loadingStatus, create supplier object, invoke the SupplierManager post method, and redirect to home
     */
-    constructNewSupplier = evt => {
+    constructEditedSupplier = evt => {
         evt.preventDefault();
         if (this.state.name === "" || this.state.address === "" || this.state.phone === "") {
             window.alert("Please input supplier name, address and phone number");
         } else {
             this.setState({ loadingStatus: true });
-            const newSupplier = {
+            const editedSupplier = {
+                id: this.state.id,
                 name: this.state.name,
                 address: this.state.address,
                 phone: this.state.phone,
                 userId: sessionStorage.getItem("credentials"),
                 loadingStatus: true,
-                archived: false,
             };
 
 
             // Create the supplier and redirect user to home
-            SupplierManager.post(newSupplier)
-                .then(() => this.props.history.push("/home"));
+            SupplierManager.update(editedSupplier)
+                .then(() => this.props.history.push("/supplier"));
         }
     };
+
+    componentDidMount() {
+        SupplierManager.getOne(this.props.match.params.supplierId)
+            .then(supplier => {
+                this.setState({
+                    name: supplier.name,
+                    address: supplier.address,
+                    phone: supplier.phone,
+                    loadingStatus: false,
+                });
+            });
+        }
+
+
+
 
        render() {
 
@@ -61,6 +74,7 @@ class SupplierForm extends Component {
                                 onChange={this.handleFieldChange}
                                 //id must exactly match variable in state
                                 id="name"
+                                value={this.state.name}
                                 placeholder="Supplier Name"
                             /></p>
                             <p><label className="label-text" htmlFor="name">  Enter the Supplier's Name</label></p>
@@ -70,6 +84,7 @@ class SupplierForm extends Component {
                                 onChange={this.handleFieldChange}
 
                                 id="address"
+                                value={this.state.address}
                                 placeholder="Supplier Address"
                             /></p>
                             <p> <label className="label-text" htmlFor="address">  Enter the Supplier's Address</label></p>
@@ -80,6 +95,7 @@ class SupplierForm extends Component {
                                 onChange={this.handleFieldChange}
 
                                 id="phone"
+                                value={this.state.phone}
                                 placeholder="Supplier Phone"
                             /></p>
                             <p> <label className="label-text" htmlFor="phone">  Enter the Supplier's Telephone number</label></p>
@@ -91,8 +107,8 @@ class SupplierForm extends Component {
                             <button
                                 type="button"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.constructNewSupplier}
-                            >Save New Supplier</button>
+                                onClick={this.constructEditedSupplier}
+                            >Save Edited Supplier</button>
                         </div>
 
                 </form>
@@ -101,4 +117,4 @@ class SupplierForm extends Component {
     }
 }
 
-export default SupplierForm
+export default SupplierEditForm
