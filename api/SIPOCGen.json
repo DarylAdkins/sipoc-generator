@@ -3,13 +3,13 @@
     {
       "id": 21,
       "name": "Make Tuna Sandwich",
-      "step": 1,
+      "step": 4,
       "supplierId": 1,
       "inputs": "Tuna",
       "process": "Drain tuna can and empty tuna into bowl.",
       "outputs": "Drained tuna in a mixing bowl",
       "customer": "Mayo mixing step.",
-      "timeSaved": 1572878201303,
+      "timeSaved": 1572882617799,
       "userId": 2,
       "archive": false
     },
@@ -24,7 +24,7 @@
       "customer": "Sandwich finishing step",
       "timeSaved": 1572872572699,
       "userId": 2,
-      "archived": false
+      "archived": true
     },
     {
       "id": 23,
@@ -51,6 +51,19 @@
       "timeSaved": 1571923046128,
       "userId": 2,
       "archived": true
+    },
+    {
+      "id": 25,
+      "name": "Orange juice",
+      "step": 1,
+      "supplierId": 10,
+      "inputs": "Orange juice",
+      "process": "pour into glass",
+      "outputs": "orange juice in glass",
+      "customer": "thirsty folks",
+      "timeSaved": 1572882526105,
+      "userId": 2,
+      "archived": false
     }
   ],
   "users": [
@@ -90,11 +103,11 @@
       "archived": false
     },
     {
-      "name": "Walmart",
+      "id": 3,
+      "name": "Wally World",
       "address": "Route 60 Huntington",
       "phone": "304-785-4597",
-      "userId": 1,
-      "id": 3,
+      "userId": 2,
       "archived": false
     },
     {
@@ -127,6 +140,30 @@
       "phone": "1234",
       "userId": 3,
       "id": 7,
+      "archived": false
+    },
+    {
+      "id": 8,
+      "name": "Tradewell",
+      "address": "987 3rd Street",
+      "phone": "304-784-5249",
+      "userId": 2,
+      "archived": false
+    },
+    {
+      "name": "sc",
+      "address": "sfs",
+      "phone": "scs",
+      "userId": 2,
+      "archived": true,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Foodland",
+      "address": "123 Main Street",
+      "phone": "123456789",
+      "userId": 2,
       "archived": false
     }
   ]

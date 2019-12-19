@@ -42,7 +42,7 @@ class SupplierForm extends Component {
 
             // Create the supplier and redirect user to home
             SupplierManager.post(newSupplier)
-                .then(() => this.props.history.push("/home"));
+                .then(() => this.props.history.push("/supplier"));
         }
     };
 
