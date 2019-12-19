@@ -1,0 +1,17 @@
+#welcome {
+    display: flex;
+    justify-content: center;
+
+}
+
+h1 {
+    color: rgb(255, 153, 37);
+    font-family: 'Mansalva', cursive;
+    font-size: 40px
+}
+
+#list {
+    color: rgb(109, 104, 45);
+    font-family: 'Mansalva', cursive;
+    font-size: 30px
+}

@@ -2,14 +2,20 @@ import { Route, withRouter, Redirect } from "react-router-dom"
 import React, { Component } from 'react'
 import Home from './home/Home'
 import SipocList from "./sipocgen/SipocList"
-// import SupplierList from "./suppliers/SupplierList"
+import SupplierList from "./suppliers/SupplierList"
 import SipocForm from "./sipocgen/SipocForm"
 import SupplierForm from "./suppliers/SupplierForm"
 import SipocDetail from "./sipocgen/SipocDetail"
+import SipocEditForm from "./sipocgen/SipocEditForm"
+import Auth0Client from "./auth/Auth";
+import Callback from "./auth/Callback"
+import SipocSearch from "./search/SipocSearch"
+import SipocSearchDetail from "./search/SipocSearchDetail"
+import SipocSearchEditForm from "./search/SipocSearchEditForm"
+import SupplierEditForm from "./suppliers/SupplierEditForm"
+import SupplierDetail from "./suppliers/SupplierDetail"
 
 
-// import Auth0Client from "./auth/Auth";
-// import Callback from "./auth/Callback"
 
 
 class ApplicationViews extends Component {
@@ -21,30 +27,215 @@ class ApplicationViews extends Component {
             <React.Fragment>
 
 
-                <Route exact path="/home" render={(props) => {
-                    return <Home {...props} />
-                }} />
-
-                <Route exact path="/sipoc" render={(props) => {
-                    return <SipocList {...props} />
-                }} />
-
-                <Route exact path="/sipoc/:sipocId(\d+)" render={(props) => {
-                    // Pass the SipocId to the SipocDetail Component
-                    return  <SipocDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />
-                }} />
 
 
-                <Route exact path="/sipoc/new" render={(props) => {
-                    return <SipocForm {...props} />
-                }} />
+                <Route
+                    exact
+                    path="/home"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <Home {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/sipoc"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocList {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/sipoc/:sipocId(\d+)"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/sipoc/searchedit/details/:sipocId(\d+)"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearchDetail {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
+                    path="/sipoc/new"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocForm {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/sipoc/:sipocId(\d+)/edit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocEditForm {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/sipoc/:sipocId(\d+)/searchedit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearchEditForm {...props} sipocId={parseInt(props.match.params.sipocId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
+                    path="/sipoc/search"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearch {...props}
+                            // sipocId={parseInt(props.match.params.sipocId)}
+                            />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/sipoc/searchedit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SipocSearch {...props}
+                            // sipocId={parseInt(props.match.params.sipocId)}
+                            />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
 
 
 
 
-                <Route exact path="/supplier/new" render={(props) => {
-                    return <SupplierForm {...props} />
-                }} />
+
+
+
+                <Route
+                    exact
+                    path="/supplier/new"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierForm {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+
+                <Route
+                    exact
+                    path="/supplier/edit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierEditForm {...props}
+                            // sipocId={parseInt(props.match.params.sipocId)}
+                            />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
+                    path="/supplier/:supplierId(\d+)/edit"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierEditForm {...props} supplierId={parseInt(props.match.params.supplierId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+                <Route
+                    exact
+                    path="/supplier"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierList {...props} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+                <Route
+                    exact
+                    path="/supplier/:supplierId(\d+)"
+                    render={props => {
+                        if (Auth0Client.isAuthenticated()) {
+                            return <SupplierDetail {...props} supplierId={parseInt(props.match.params.supplierId)} />;
+                        } else {
+                            Auth0Client.signIn();
+                            return null;
+                        }
+                    }}
+                />
+
+
+
+
+
+                <Route exact path="/callback" component={Callback} />
+
+
 
 
             </React.Fragment>

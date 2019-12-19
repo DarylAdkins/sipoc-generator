@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import "./SipocCard.css"
 
 
 
@@ -9,19 +10,11 @@ class SipocCard extends Component {
         return (
 
                 <div className="card">
-                    <div className="card-content">
+                    <div className="sipoc-card-content">
 
-                        <h3>SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.props.sipoc.name}</span></h3>
-                        {/* <p>Supplier:</p> <p>{this.props.sipoc.supplierId}</p>
-                        <p>Input:</p> <p>{this.props.sipoc.inputs}</p>
-                        <p>Process:</p> <p>{this.props.sipoc.process}</p>
-                        <p>Output:</p> <p>{this.props.sipoc.outputs}</p>
-                        Customer: {this.props.sipoc.customers} */}
-
-                        <Link to={`/sipoc/${this.props.sipoc.id}`}><button>Details</button></Link>
-                        <Link to={`/sipoc/${this.props.sipoc.id}/edit`}><button>Edit</button></Link>
-
-
+                        <p className="sipoc-name1">SIPOC Name: <span>{this.props.sipoc.name}</span></p>
+                        <p className="sipoc-name1">Step: <span>{this.props.sipoc.step}</span></p>
+                        <Link to={`/sipoc/${this.props.sipoc.id}?_expand=supplier`}><button className="details-button">Details</button></Link>
                     </div>
                 </div>
 
@@ -31,41 +24,4 @@ class SipocCard extends Component {
 
 
 export default SipocCard;
-
-// import React, { Component } from 'react';
-// // import './Animal.css'
-// import SipocList from './SipocList'
-// import { Link } from "react-router-dom";
-
-
-
-// class SipocCard extends Component {
-
-
-
-//   render() {
-
-//     return (
-
-//             <div className="card">
-//                 <div className="card-content">
-
-//                     <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
-//                     Supplier: {this.state.supplierId},
-//                     Input: {this.state.inputs},
-//                     Process: {this.state.process},
-//                     Output: {this.state.outputs},
-//                     Customer: {this.state.customers}
-
-
-
-
-//                 </div>
-//             </div>
-
-//     );
-// }
-// }
-
-// export default SipocCard;
 

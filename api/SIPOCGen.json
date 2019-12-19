@@ -1,50 +1,170 @@
 {
   "sipocs": [
     {
-      "id": 1,
-      "name": "make cheese sandwich",
+      "id": 21,
+      "name": "Make Tuna Sandwich",
+      "step": 4,
       "supplierId": 1,
-      "inputs": "1. bread, 2. cheese",
-      "process": "assemble cheese sandwich",
-      "outputs": "sandwich with 2 slices of bread with 1 thick slice of cheese between them",
-      "customer": "consumer",
-      "timeSaved": "12:10",
-      "userId": 1
+      "inputs": "Tuna",
+      "process": "Drain tuna can and empty tuna into bowl.",
+      "outputs": "Drained tuna in a mixing bowl",
+      "customer": "Mayo mixing step.",
+      "timeSaved": 1572882617799,
+      "userId": 2,
+      "archive": false
     },
     {
-      "id": 2,
-      "name": "make ham sandwich",
+      "id": 22,
+      "name": "Make Tuna Sandwich",
+      "step": 2,
+      "supplierId": 3,
+      "inputs": "Mayonnaise",
+      "process": "Add mayo to mixing bowl and stir until homogeneous",
+      "outputs": "Homogeneous mixture of tuna and mayo ",
+      "customer": "Sandwich finishing step",
+      "timeSaved": 1572872572699,
+      "userId": 2,
+      "archived": true
+    },
+    {
+      "id": 23,
+      "name": "Make Tuna Sandwich",
+      "step": 3,
+      "supplierId": 4,
+      "inputs": "Sliced bread (customer's choice of bread)",
+      "process": "Spread tuna/mayo mixture on 2 slices of bread. Place the bread slices together with tuna mixture between the bread slices",
+      "outputs": "Completed tuna sandwich",
+      "customer": "Diners",
+      "timeSaved": 1572878187054,
+      "userId": 2,
+      "archived": false
+    },
+    {
+      "id": 24,
+      "name": "test1",
+      "step": 1,
       "supplierId": 1,
-      "inputs": "1. bread 2. ham",
-      "process": "make cheese sandwich",
-      "outputs": "sandwich with 2 slices of bread with 1 thick slice of ham between",
-      "customer": "consumer",
-      "timeSaved": "9:00",
-      "userId": 1
+      "inputs": "wef",
+      "process": "few",
+      "outputs": "6y",
+      "customer": "rf",
+      "timeSaved": 1571923046128,
+      "userId": 2,
+      "archived": true
+    },
+    {
+      "id": 25,
+      "name": "Orange juice",
+      "step": 1,
+      "supplierId": 10,
+      "inputs": "Orange juice",
+      "process": "pour into glass",
+      "outputs": "orange juice in glass",
+      "customer": "thirsty folks",
+      "timeSaved": 1572882526105,
+      "userId": 2,
+      "archived": false
     }
   ],
   "users": [
     {
-      "id": 1,
-      "userName": "Bob"
+      "aud": "auth0|5da87e17a909690d73710c31",
+      "name": "frank",
+      "id": 1
+    },
+    {
+      "aud": "auth0|5da767d5a6e56f0d7c8e4f10",
+      "name": "bob",
+      "id": 2
+    },
+    {
+      "aud": "auth0|5da88a6fdbb8c00d790048d4",
+      "name": "josh",
+      "id": 3
+    },
+    {
+      "aud": "auth0|5da87c11dbb8c00d79004727",
+      "name": "sally",
+      "id": 4
+    },
+    {
+      "aud": "auth0|5dae41f2b256c50e25993758",
+      "name": "abableach",
+      "id": 5
     }
   ],
   "suppliers": [
     {
       "id": 1,
-      "name": "Kroger",
+      "name": "Kroger, Inc.",
       "address": "5th Avenue",
       "phone": "304-544-5698",
-      "active": true,
-      "userId": 1
+      "userId": 2,
+      "archived": false
     },
     {
-      "name": "d",
-      "address": "efwsf",
-      "phone": "efsf",
-      "userId": null,
-      "loadingStatus": true,
-      "id": 2
+      "id": 3,
+      "name": "Wally World",
+      "address": "Route 60 Huntington",
+      "phone": "304-785-4597",
+      "userId": 2,
+      "archived": false
+    },
+    {
+      "id": 4,
+      "name": "Bobs",
+      "address": "123 Street",
+      "phone": "6416841646",
+      "userId": 2,
+      "archived": false
+    },
+    {
+      "id": 5,
+      "name": "Lowes, LLC",
+      "address": "456 Main Street, Huntington",
+      "phone": "304-521-6487",
+      "userId": 2,
+      "archived": false
+    },
+    {
+      "name": "Home Depot",
+      "address": "123",
+      "phone": "911",
+      "userId": 2,
+      "id": 6,
+      "archived": false
+    },
+    {
+      "name": "Tractor",
+      "address": "ohio",
+      "phone": "1234",
+      "userId": 3,
+      "id": 7,
+      "archived": false
+    },
+    {
+      "id": 8,
+      "name": "Tradewell",
+      "address": "987 3rd Street",
+      "phone": "304-784-5249",
+      "userId": 2,
+      "archived": false
+    },
+    {
+      "name": "sc",
+      "address": "sfs",
+      "phone": "scs",
+      "userId": 2,
+      "archived": true,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Foodland",
+      "address": "123 Main Street",
+      "phone": "123456789",
+      "userId": 2,
+      "archived": false
     }
   ]
 }

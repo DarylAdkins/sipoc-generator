@@ -1,0 +1,57 @@
+.supplier-detail-titleboxes {
+    display: flex;
+    /* border-style: solid; */
+    /* width: 15vw; */
+    height: fit-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+};
+
+.supplier-detail-card-content {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    size: 90pc;
+}
+
+.supplier-detail-contentboxes {
+    display: flex;
+    /* border-style: solid; */
+    /* width: 15vw; */
+    height: max-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+
+}
+
+.supplier-detail-column {
+    display: flex;
+    /* border-style: solid; */
+    border-color: gray;
+    flex-direction: column;
+    width: 15vw;
+    align-items: center;
+}
+
+.supplier-detail-button-container {
+    display: flex;
+    justify-content: center;
+    /* padding-top: 20px */
+}
+
+/* .supplier-detail-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 25px;
+} */
+
+.supplier-detail-supplier-name {
+    display: flex;
+    justify-content: center;
+    padding-left: 30px;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+}

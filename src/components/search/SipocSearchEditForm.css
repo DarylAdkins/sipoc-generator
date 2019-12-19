@@ -1,0 +1,55 @@
+.search-edit-form-titleboxes {
+    display: flex;
+    border-style: solid;
+    width: 15vw;
+    height: fit-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 30px;
+};
+
+.search-edit-form-card-content {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    size: 90pc;
+}
+
+.search-edit-form-contentboxes {
+    display: flex;
+    border-style: solid;
+    width: 15vw;
+    height: max-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+
+}
+
+.search-edit-form-column {
+    display: flex;
+    /* border-style: solid; */
+    border-color: gray;
+    flex-direction: column;
+    width: 15vw;
+    align-items: center;
+}
+
+.search-edit-form-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px
+}
+
+.search-edit-form-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 25px;
+}
+
+.search-edit-form-sipoc-name {
+    padding-left: 30px;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+}

@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import SIPOCManager from '../../modules/SIPOCManager';
+import React, { Component } from "react"
+import SIPOCManager from "../../modules/SIPOCManager";
 import SupplierManager from "../../modules/SupplierManager"
-import "./SipocForm.css"
+import "./SipocSearchEditForm.css"
 
 
-
-class SipocForm extends Component {
+class SipocEditForm extends Component {
+    //set the initial state
     state = {
         name: "",
-        step: "",
+        step: 1,
         supplierId: "",
         inputs: "",
         process: "",
@@ -21,22 +21,22 @@ class SipocForm extends Component {
     };
 
     handleFieldChange = evt => {
-        const stateToChange = {};
-        stateToChange[evt.target.id] = evt.target.value;
-        this.setState(stateToChange);
-    };
+        const stateToChange = {}
+        stateToChange[evt.target.id] = evt.target.value
+        this.setState(stateToChange)
+    }
 
-    /*  Local method for validation, set loadingStatus, create sipoc object, invoke the sipoc Manager post method, and redirect to the sipoc list
-    */
-    constructNewSipoc = evt => {
-        evt.preventDefault();
-        if (this.state.name === "" || this.state.process === "") {
-            window.alert("Please input name, and process");
-        } else if (this.state.supplierId === "") {
+    updateExistingSearchSipoc = evt => {
+
+        evt.preventDefault()
+        if (this.state.supplierId === "0") {
             window.alert("Please select a supplier from the dropdown");
         } else {
+
             this.setState({ loadingStatus: true });
-            const newSipoc = {
+
+            const editedSipoc = {
+                id: this.props.match.params.sipocId,
                 name: this.state.name,
                 step: +this.state.step,
                 supplierId: +this.state.supplierId,
@@ -46,18 +46,31 @@ class SipocForm extends Component {
                 customer: this.state.customer,
                 timeSaved: Date.now(),
                 userId: +sessionStorage.getItem("credentials"),
-                archived: false
+                archive: false
 
             };
 
-            // Create the sipoc and redirect user to SipocList
-            SIPOCManager.post(newSipoc)
-                .then(() => this.props.history.push("/sipoc"));
+
+            SIPOCManager.update(editedSipoc)
+                .then(() => this.props.history.push("/sipoc/search"))
         }
-    };
+    }
 
     componentDidMount() {
-        //getAll from supplier Manager and hang on to that data; put it in state
+        SIPOCManager.getOne(this.props.match.params.sipocId)
+            .then(sipoc => {
+                this.setState({
+                    name: sipoc.name,
+                    step: +sipoc.step,
+                    supplierId: sipoc.supplierId,
+                    inputs: sipoc.inputs,
+                    process: sipoc.process,
+                    outputs: sipoc.outputs,
+                    customer: sipoc.customer,
+                    loadingStatus: false,
+                });
+            });
+
         SupplierManager.getAll()
             .then((suppliersFromDataBase) => {
                 console.log(suppliersFromDataBase)
@@ -67,16 +80,15 @@ class SipocForm extends Component {
             })
     }
 
-
     render() {
 
         return (
             <>
-                <div className="card">
-                    <div className="card-content"> <form>
+                <form>
 
+                    <div className="search-edit-form-formgrid">
 
-                        <div className="sipoc-name">
+                        <div className="search-edit-form-sipoc-name">
                             <label htmlFor="name">SIPOC Title </label>
                             <input
                                 type="text"
@@ -84,6 +96,7 @@ class SipocForm extends Component {
                                 onChange={this.handleFieldChange}
                                 //id must exactly match variable in state
                                 id="name"
+                                value={this.state.name}
                                 placeholder="SIPOC Title"
                             />
 
@@ -94,18 +107,17 @@ class SipocForm extends Component {
                                 onChange={this.handleFieldChange}
                                 //id must exactly match variable in state
                                 id="step"
+                                value={this.state.step}
                                 placeholder="Enter Step Number (ex. 1)"
                             />
                         </div>
 
-
-
-                        <div className="flex-container">
-                            <div className="column">
-                                <div className="titleboxes">
+                        <div className="edit-form-flex-container">
+                            <div className="edit-form-column">
+                                <div className="edit-form-titleboxes">
                                     <label htmlFor="supplierId">Select Supplier</label>
                                 </div>
-                                <div className="contentboxes">
+                                <div className="edit-form-contentboxes">
                                     <select
                                         className="form-control"
                                         id="supplierId"
@@ -123,85 +135,85 @@ class SipocForm extends Component {
 
                             </div>
 
-
-                            <div className="column">
-                                <div className="titleboxes">
+                            <div className="edit-form-column">
+                                <div className="edit-form-titleboxes">
                                     <label htmlFor="Inputs">Inputs</label>
                                 </div>
-                                <div className="contentboxes">
+                                <div className="edit-form-contentboxes">
                                     <textarea
                                         type="text"
                                         required
                                         onChange={this.handleFieldChange}
                                         id="inputs"
+                                        value={this.state.inputs}
                                         placeholder="Inputs"
                                     />
                                 </div>
                             </div>
 
-                            <div className="column">
-                                <div className="titleboxes">
+                            <div className="edit-form-column">
+                                <div className="edit-form-titleboxes">
                                     <label htmlFor="process">Process</label>
                                 </div>
 
-                                <div className="contentboxes">
+                                <div className="edit-form-contentboxes">
                                     <textarea
                                         type="textarea"
                                         required
                                         onChange={this.handleFieldChange}
                                         id="process"
+                                        value={this.state.process}
                                         placeholder="Process"
                                     />
                                 </div>
                             </div>
 
-                            <div className="column">
-                                <div className="titleboxes">
+                            <div className="edit-form-column">
+                                <div className="edit-form-titleboxes">
                                     <label htmlFor="outputs">Outputs</label>
                                 </div>
-                                <div className="contentboxes">
+                                <div className="edit-form-contentboxes">
                                     <textarea
                                         type="text"
                                         required
                                         onChange={this.handleFieldChange}
                                         id="outputs"
+                                        value={this.state.outputs}
                                         placeholder="Outputs"
                                     />
                                 </div>
                             </div>
 
-                            <div className="column">
-                                <div className="titleboxes">
+                            <div className="edit-form-column">
+                                <div className="edit-form-titleboxes">
                                     <label htmlFor="customer">Customers</label>
                                 </div>
-                                <div className="contentboxes">
+                                <div className="edit-form-contentboxes">
                                     <textarea
                                         type="text"
                                         required
                                         onChange={this.handleFieldChange}
                                         id="customer"
+                                        value={this.state.customer}
                                         placeholder="Customers"
                                     />
                                 </div>
                             </div>
                         </div>
-                        <br></br>
-                        <br></br>
-                        <div className="form-submit-button">
-                            <button
-                                type="button"
-                                // disabled={this.state.loadingStatus}
-                                onClick={this.constructNewSipoc}
-                            >Submit</button>
-                        </div>
-                        {/* </div> */}
-
-                    </form>
                     </div>
-                </div>
+
+                    <div className="search-edit-form-sipoc-name">
+                        <button
+                            type="button"
+                            // disabled={this.state.loadingStatus}
+                            onClick={this.updateExistingSearchSipoc}
+                        >Save Changes</button>
+                    </div>
+
+                </form>
             </>
-        )
+        );
     }
 }
 
-export default SipocForm
+export default SipocEditForm

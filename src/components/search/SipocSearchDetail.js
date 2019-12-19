@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import SIPOCManager from '../../modules/SIPOCManager';
 import { Link } from "react-router-dom";
-import './SipocDetail.css'
+import "./SipocSearchDetail.css"
 
 
-
-class SipocDetail extends Component {
+class SipocSearchDetail extends Component {
 
     state = {
         name: "",
+        step: 1,
         supplierId: "",
         inputs: "",
         process: "",
@@ -23,7 +23,7 @@ class SipocDetail extends Component {
     deleteSipoc = id => {
 
         SIPOCManager.softDelete(this.state.id)
-            .then(() => { this.props.history.push("/sipoc") });
+            .then(() => { this.props.history.push("/sipoc/searchedit") });
     };
 
 
@@ -56,13 +56,14 @@ class SipocDetail extends Component {
         return (
             this.isValid() ?
                 <div className="card">
-                    <div className="card-content">
+                    <div className="search-detail-card-content">
 
-                        <h3 className="detail-sipoc-name">SIPOC Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span>
-                          Step: <span>{this.state.step}</span></h3>
-                        <div className="flex-container">
+                    <h3 className="search-detail-sipoc-name">SIPOC Name:  <span style={{ color: 'darkslategrey' }}>{this.state.name}</span>
+                      Step: {this.state.step}</h3>
+                        <div className="search-detail-flex-container">
 
-                            <div className="search-column">
+
+                        <div className="search-column">
                                 <p className="search-titleboxes">Supplier:</p>
                                 <p className="search-contentboxes">{this.state.supplier}</p>
                             </div>
@@ -94,19 +95,23 @@ class SipocDetail extends Component {
                             </div>
 
 
-                            <p><div className="sipoc-detail-button-container">
-                                <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSipoc}>Delete SIPOC</button>
-                                <br></br>
-                                <Link to={`/sipoc/${this.state.id}/edit`}><button>Edit SIPOC</button></Link>
-                            </div></p>
                         </div>
-                    </div>
 
-                    :
+                        <div className="button-container">
+                            <button type="button" disabled={this.state.loadingStatus} onClick={this.deleteSipoc}>Delete SIPOC</button>
+                            <br></br>
+                            <Link to={`/sipoc/${this.state.id}/searchedit`}><button>Edit SIPOC</button></Link>
+                        </div>
+
+
+
+                </div>
+                
+                :
                 <p>Item does not exist</p>
-                    );
-                }
-            }
+        );
+    }
+}
 
-            export default SipocDetail;
+export default SipocSearchDetail;
 

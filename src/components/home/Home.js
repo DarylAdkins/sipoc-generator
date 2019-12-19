@@ -1,86 +1,24 @@
 import React, { Component } from 'react'
-import SIPOCManager from '../../modules/SIPOCManager'
-import SipocList from '../sipocgen/SipocList'
-import { Link } from "react-router-dom";
+
+
+import "./Home.css"
 
 class Home extends Component {
-
-    // state = {
-    //         id: "",
-    //         name: "",
-    //         supplierId: "",
-    //         inputs: "",
-    //         process: "",
-    //         outputs: "",
-    //         customer: "",
-    //         timeSaved: "",
-    //         userId: "",
-    //         sipocs: [],
-    //         loadingStatus: false,
-    //     };
-
-    // handleFieldChange = evt => {
-    //     const stateToChange = {};
-    //     stateToChange[evt.target.id] = evt.target.value;
-    //     this.setState(stateToChange);
-    // };
-
-
-
-
-
-    // componentDidMount() {
-
-    //     //getAll from sipoc Manager and hang on to that data; put it in state
-    //     SIPOCManager.getAll()
-    //         .then((sipocsFromDataBase) => {
-    //             console.log(sipocsFromDataBase)
-    //             this.setState({
-    //                 sipocs: sipocsFromDataBase
-    //             })
-    //         })
-    // };
-
-    // handleSubmit() {
-    //     // const sipocId = this.state.id
-    //     SIPOCManager.getOne(this.state.id)
-    //         .then(() => { this.props.history.push("/sipoc") });
-    // };
-
-    // handleNewSipoc() {
-    //     this.history.push("/sipoc/new")
-    // };
-
-    // handleNewSupplier() {
-    //     this.props.history.push("/supplier/new")
-    // }
-
-
 
     render() {
 
         return (
 
-            <form >
-
-
+            <form id="welcome">
                 <div>
-                <Link  to="/sipoc"><button>View Previous SIPOCs</button></Link>
+                <h1>Welcome to the SIPOC Generator</h1>
+                
+
+                <li id="list">Users can create, view, edit, and archive Suppliers.</li>
+                <li id="list">Users can create, view, edit, and archive SIPOCs.</li>
+                <li id="list">Users are limited to viewing, editing and archiving only the SIPOCs and Suppliers that they created.</li>
+                <li id="list">Use the Navigation Bar to move throughout the application.</li>
                 </div>
-
-                <div>
-                <Link  to="/sipoc/new"><button>Create New SIPOC</button></Link>
-                </div>
-
-                <div>
-                <Link  to="/supplier/new"><button>Create New Supplier</button></Link>
-                </div>
-
-
-
-
-
-
             </form>
         )
     }

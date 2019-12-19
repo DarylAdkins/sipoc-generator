@@ -1,0 +1,60 @@
+.search-detail-titleboxes {
+    display: flex;
+    border-style: solid;
+    width: 15vw;
+    height: fit-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+};
+
+.search-detail-card-content {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    size: 90pc;
+}
+
+.search-detail-contentboxes {
+    display: flex;
+    border-style: solid;
+    width: 15vw;
+    height: max-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+}
+
+.search-detail-column {
+    display: flex;
+
+    border-color: gray;
+    flex-direction: column;
+    width: 20vw;
+    align-items: center;
+}
+
+.search-detail-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px
+}
+
+.search-detail-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 25px;
+}
+
+.search-detail-sipoc-name {
+    padding-left: 30px;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+}
+
+.search-detail-search-step-number {
+    font-family: 'Mansalva', cursive;
+    font-size: 15px;
+}
+

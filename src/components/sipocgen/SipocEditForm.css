@@ -1,0 +1,55 @@
+.edit-form-titleboxes {
+    display: flex;
+    border-style: solid;
+    width: 15vw;
+    height: fit-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 30px;
+};
+
+.edit-form-card-content {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    size: 90pc;
+}
+
+.edit-form-contentboxes {
+    display: flex;
+    border-style: solid;
+    width: 15vw;
+    height: max-content;
+    justify-content: center;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+
+}
+
+.edit-form-column {
+    display: flex;
+    /* border-style: solid; */
+    border-color: gray;
+    flex-direction: column;
+    width: 15vw;
+    align-items: center;
+}
+
+.edit-form-button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px
+}
+
+.edit-form-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 25px;
+}
+
+.edit-form-sipoc-name {
+    padding-left: 30px;
+    font-family: 'Mansalva', cursive;
+    font-size: 25px;
+}

@@ -1,32 +1,56 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from "react-router-dom"
-// import './NavBar.css'
-// import auth0Client from "../auth/Auth";
+import './NavBar.css'
+import auth0Client from "../auth/Auth";
 
 class NavBar extends Component {
-    //  signOut = () => {
-    //     auth0Client.signOut();
-    //     sessionStorage.clear()
-    //     this.props.history.replace("/");
-    //   };
+    signOut = () => {
+        auth0Client.signOut();
+        sessionStorage.clear()
+        this.props.history.replace("/");
+    };
 
     render() {
 
         return (
+            <header>
+                <h1 className="site-title">SIPOC Generator</h1>
+                <nav>
 
-<header>
-            <h1 className="site-title">SIPOC Generator</h1>
+                    {!auth0Client.isAuthenticated() ? (
+                        <p id="signinbuttonposition"><button id="signinbutton" className="btn btn-success" onClick={auth0Client.signIn}>Please Sign In</button></p>
+                    ) : (
+                            <React.Fragment>
+                                <div className="container">
+                                    <p><Link className="nav-link" to="/home">Home</Link></p>
+                                    <p><Link className="nav-link" to="/sipoc">  SIPOCs  </Link></p>
+                                    <p><Link className="nav-link" to="/supplier">  Suppliers  </Link></p>
+                                    
 
-            <nav>
-                <ul className="container">
-                    <li><Link className="nav-link" to="/home">Home</Link></li>
-                    <li><Link className="nav-link" to="/sipoc">SIPOCs
-                    </Link></li>
-                </ul>
-            </nav>
+                                    <div id="userdiv">
+                                        <div id="user">
+                                            {auth0Client.getProfile().name}
+                                        </div>
+                                    </div>
+
+                                    <div id="signoutcontainer">
+                                        <button id="signoutbutton"
+                                        className="btn btn-danger"
+                                        onClick={this.signOut}
+                                    >
+                                        Sign Out
+                                     </button>
+                                    </div>
+                                </div>
+
+
+                            </React.Fragment>
+                        )}
+
+                </nav>
             </header>
-    )
+        )
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
